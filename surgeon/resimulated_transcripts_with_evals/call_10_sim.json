@@ -1,0 +1,86 @@
+{
+  "call_id": "call_10",
+  "customer": {
+    "name": "Ravi Gupta",
+    "pending_amount": "fifty thousand",
+    "closure_amount": "zero",
+    "settlement_amount": "",
+    "dpd": "180"
+  },
+  "disposition": "NO_COMMITMENT",
+  "phases_visited": [
+    "discovery",
+    "negotiation",
+    "closing"
+  ],
+  "total_turns": 15,
+  "transcript": [
+    {
+      "speaker": "agent",
+      "text": "Hello, this is Alex from DemoCompany, calling about your DemoLender loan. We reviewed your account and have a good offer to help close it. Can we talk for a moment?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Yes."
+    },
+    {
+      "speaker": "agent",
+      "text": "Ravi, just to confirm — am I speaking with Ravi Gupta?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Yeah. Yeah. I I can see."
+    },
+    {
+      "speaker": "agent",
+      "text": "Great, Ravi. So your account shows fifty thousand rupees pending on your DemoLender loan. I'm checking with the team on the best closure offer for your account — but that's exactly why I'm calling today. Can you tell me a little about what's been going on — why payments haven't been coming through?"
+    },
+    {
+      "speaker": "customer",
+      "text": "I I said I can't say not see."
+    },
+    {
+      "speaker": "agent",
+      "text": "Sorry, I didn't quite catch that. Could you say that again?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Yeah. I I can share. Not a problem."
+    },
+    {
+      "speaker": "agent",
+      "text": "Thanks, Ravi. So what's been going on — why have payments been on hold for a while?"
+    },
+    {
+      "speaker": "customer",
+      "text": "No. You asked me a question. Right? Why are you pulling out my account details now?"
+    },
+    {
+      "speaker": "agent",
+      "text": "Your number is registered with your DemoLender loan account, Ravi. I'm just here to help find the best way to close this out for you. Nothing unusual — this is a standard follow-up on your account."
+    },
+    {
+      "speaker": "customer",
+      "text": "Okay. Go ahead."
+    },
+    {
+      "speaker": "agent",
+      "text": "So Ravi, your account has been unpaid for quite a while now. Can you help me understand what's been happening — is it a job situation, or something else going on?"
+    },
+    {
+      "speaker": "customer",
+      "text": "I'm waiting."
+    },
+    {
+      "speaker": "agent",
+      "text": "Waiting for what, Ravi — are you between jobs right now, or waiting on some income to come in?"
+    }
+  ],
+  "function_calls": [
+    {
+      "turn": 2,
+      "function": "proceed_to_discovery",
+      "params": ""
+    }
+  ]
+}

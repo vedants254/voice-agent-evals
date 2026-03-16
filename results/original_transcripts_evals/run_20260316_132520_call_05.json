@@ -1,0 +1,212 @@
+{
+  "timestamp": "20260316_132520",
+  "calls_evaluated": [
+    "call_05"
+  ],
+  "summary": {
+    "call_05": {
+      "score": 54.6,
+      "verdict": "good"
+    }
+  },
+  "results": [
+    {
+      "call_id": "call_05",
+      "customer_name": "Deepa Krishnan",
+      "disposition": "STRONGEST_PTP",
+      "score": 54.6,
+      "verdict": "good",
+      "dimension_scores": {
+        "communication": 0.8,
+        "protocol": 0.4,
+        "situational_intelligence": 0.55,
+        "flow_transitions": 0.3,
+        "conversation_quality": 0.52,
+        "empathy": 0.8,
+        "outcome": 0.4
+      },
+      "dimension_details": {
+        "communication": {
+          "C1": {
+            "evidence": "Turn 12: 'Got' (fragment). Turn 16: 'Okay.' (zero-information filler). Turn 24: 'Okay, you'll pay the full forty' (cut off mid-sentence). Turn 35: 'Okay, I hear that you're looking to' (cut off). Turn 40: 'I hear you. You mentioned' (cut off). Turn 42: 'Let me pull up your account' (incomplete). Turn 29: 'Okay.' (pure filler).",
+            "verdict": "partial",
+            "reasoning": "Multiple agent turns are fragments, cut-off mid-sentence, or pure filler with no informational value. While most complete turns are coherent, the frequency of fragments and zero-content utterances meaningfully degrades the listening experience on a voice call."
+          },
+          "C2": {
+            "evidence": "Customer speaks English throughout (Turns 3-66). Agent responds in English throughout.",
+            "verdict": "met",
+            "reasoning": "Agent consistently matched the borrower's language (English) with no inappropriate mixing or failure to follow a language switch request."
+          },
+          "C3": {
+            "evidence": "Turn 24: Customer was mid-explanation about not wanting extra charges and agent cut in with 'you'll pay the full forty' missing the point. Turn 31: Customer gave an unclear masked amount ('XX,XXX') and agent interpreted it as 29,000 — reasonable inference. Turn 46: Agent correctly addressed connectivity and amount concerns. Turn 37-40: Agent tried to address the 29,000 claim but kept getting cut off.",
+            "verdict": "partial",
+            "reasoning": "Agent generally tracked the conversation but several turns show it missed the substance of what the borrower was saying (Turn 24 especially), and fragments suggest processing failures. Most substantive customer inputs were eventually addressed, but with notable delays and misreads."
+          },
+          "C4": {
+            "evidence": "Agent never addressed the customer by name during the call. Agent consistently identified as 'Alex from DemoCompany' (Turn 1). No confusion with other borrower data noted.",
+            "verdict": "met",
+            "reasoning": "Agent maintained correct identity and company affiliation throughout. Not using the borrower's name is a minor stylistic gap but not a factual inconsistency, so overall identity consistency is met."
+          }
+        },
+        "protocol": {
+          "P1": {
+            "evidence": "Turn 3: Customer says only 'Hello?' — no identity confirmed. Turn 4: Agent immediately states 'There's fifty thousand rupees pending on your DemoLender loan.' No identity verification occurred before amount disclosure.",
+            "verdict": "not_met",
+            "reasoning": "The agent disclosed the specific loan amount (50,000 rupees) and the nature of the debt after only a 'Hello?' — the borrower's identity was never confirmed. This is a clear P1 violation that could result in disclosing debt details to a wrong party."
+          },
+          "P2": {
+            "evidence": "TOS=50,000, POS=0, Settlement=blank. Turn 4/6/8: '50,000 rupees' — matches TOS. Turn 24: 'full forty' — truncated, unknown amount. Turn 27: '50,000 rupees' — TOS again. Turn 46: 'forty-eight thousand seventy-five rupees' — does NOT match any value in customer data. Turn 50: 'forty-eight thousand seventy-five rupees' repeated. Turn 37: 'twenty-nine thousand five hundred rupees' — customer's stated figure, not an authorized amount.",
+            "verdict": "not_met",
+            "reasoning": "Agent fabricated 'forty-eight thousand seventy-five rupees' (Turns 46, 50) — a number appearing nowhere in the customer data. Additionally, the agent echoed the borrower's unverified '29,500 rupees' figure as if it were confirmed. Multiple amount inaccuracies in a debt collection call is a serious compliance failure."
+          },
+          "P3": {
+            "evidence": "No language about legal action, wage garnishment, property seizure, or coercive ultimatums was used. Agent was consistently mild and accommodating.",
+            "verdict": "met",
+            "reasoning": "The agent used no threats or intimidating language throughout the call. Tone remained professional and non-coercive."
+          },
+          "P4": {
+            "evidence": "Turn 9: Agent says 'Okay, I understand' right after Turn 7 where customer was speaking (though mid-sentence). Turn 12: 'Got' after customer spoke at Turn 11 ('No. No. No. I can pay.'). Turn 44: Customer explicitly flagged audio issues — 'Hello?' was appropriate there. Turn 19: Customer said 'Hello?' so agent's prior 'Hello?' would have been fine.",
+            "verdict": "partial",
+            "reasoning": "Most silence/connectivity uses of 'Hello?' were appropriate because the customer was also saying 'Hello?' or had audio issues. However, Turn 9 and Turn 12 show the agent giving non-sequitur filler ('Okay, I understand' / 'Got') immediately after partial customer speech, suggesting it lost track of the conversation rather than a silence trigger."
+          }
+        },
+        "situational_intelligence": {
+          "S1": {
+            "evidence": "Turn 5: Customer says 'These days, we can't arrange any money' — financial hardship signal. Turns 7-26: Customer progressively reveals willingness to pay in installments starting April 1. Turn 47-53: Customer commits to 5,300/month. Disposition is STRONGEST_PTP.",
+            "verdict": "met",
+            "reasoning": "The situation is a financially constrained but willing payer. The agent eventually identified this correctly and moved toward securing a commitment, though it misrouted to dispute handling mid-call."
+          },
+          "S2": {
+            "evidence": "Turns 6-8: Agent asked about payment timing after brief hardship acknowledgment — appropriate. Turn 50-52: Agent set up a monthly payment plan — however payment plans are not in the system prompt. Turn 26 (after function call): proceed_to_dispute triggered incorrectly when customer was offering to pay a lower amount, not disputing the loan.",
+            "verdict": "partial",
+            "reasoning": "Agent correctly identified a willing payer and moved toward commitment, but misrouted to dispute handling mid-call (a wrong strategy for this situation) and fabricated a payment plan facility not authorized by the system prompt. Core direction was right but execution had significant gaps."
+          },
+          "S3": {
+            "evidence": "Turn 5: Customer signals financial hardship. Turn 6: Agent acknowledges briefly and pivots to payment. Turn 47: Customer proposes monthly installments. Turns 48-52: Agent adapts and confirms installment plan. Turn 25: Customer raised concern about extra charges — agent acknowledged in Turn 27.",
+            "verdict": "partial",
+            "reasoning": "Agent did eventually adapt to the installment proposal (Turns 47-52) and the concern about extra charges (Turn 27). However, the initial hardship signal (Turn 5) got only a one-line generic acknowledgment before pushing to payment, and the pivot to installments involved fabricating a plan outside the system prompt."
+          },
+          "S4": {
+            "evidence": "Turn 17: Customer gives clear PTP — 'I'll pay it on April 1.' Turn 18 (function call): end_call triggered prematurely. Customer was still mid-conversation (Turns 19-66 continued). Turn 26 (function call): proceed_to_dispute triggered after customer said 'I'll pay that amount, sir' — not a dispute signal.",
+            "verdict": "not_met",
+            "reasoning": "The agent fired end_call after Turn 18 while the customer had not fully confirmed amount or method — and the call then continued for 48 more turns. The proceed_to_dispute trigger after Turn 26 was completely wrong: the customer was confirming payment willingness, not disputing the loan. Both exits were fundamentally mistimed."
+          }
+        },
+        "flow_transitions": {
+          "F1": {
+            "evidence": "proceed_to_discovery called after Turn 7 — appropriate. proceed_to_dispute called after Turn 26 — customer said 'I'll pay that amount, sir,' not a dispute. The dispute phase was visited per the phase log but was incorrectly triggered. No proceed_to_negotiation or proceed_to_closing was called despite negotiation and closing happening.",
+            "verdict": "partial",
+            "reasoning": "Discovery transition was timely. However, dispute was incorrectly injected mid-negotiation with no actual dispute signal, and no proceed_to_negotiation or proceed_to_closing was ever called — meaning the negotiation and closing phases lacked proper function-call governance."
+          },
+          "F2": {
+            "evidence": "Turn 5: Customer mentions financial difficulty. Turn 6: Agent acknowledges and mentions options. Turn 7: Customer starts to say when they can pay. Turn 8: Agent asks when they can pay. proceed_to_discovery triggered after Turn 7 — effectively only 1-2 substantive exchanges.",
+            "verdict": "partial",
+            "reasoning": "Discovery was extremely thin — only one meaningful exchange about hardship before the agent pivoted to asking for a payment date. The root cause, employment situation, and ability/willingness dimensions were barely explored before moving on."
+          },
+          "F3": {
+            "evidence": "proceed_to_dispute called after Turn 26. Turn 25: 'amount, sir. Like, not not with extra amount, like, charges charges amount. I'll pay from April 1.' Turn 26: 'Everything every year, I'll pay.' No explicit loan denial, fraud claim, or legitimacy dispute. Customer is clearly expressing willingness to pay a specific amount.",
+            "verdict": "not_met",
+            "reasoning": "The customer never disputed the loan's existence or legitimacy — they were negotiating the amount to pay and confirming willingness to pay. Triggering proceed_to_dispute here is a clear misclassification with no basis in the transcript."
+          },
+          "F4": {
+            "evidence": "end_call triggered after Turn 18. Turns 19-66 continued — that is 48 more turns, including substantive negotiation of amount, installment plan, confirmation of April 1, and call wrap-up. Customer was mid-sentence at Turn 22 ('I just do I just do I just') when end_call had already been called.",
+            "verdict": "not_met",
+            "reasoning": "end_call was fired 48 turns before the conversation actually ended. The customer was still actively negotiating when the function was called. This is a severe post-end-call continuation failure that indicates the agent's phase management fundamentally broke down."
+          }
+        },
+        "conversation_quality": {
+          "Q1": {
+            "evidence": "Turn 4: '50,000 rupees'. Turn 6: 'fifty thousand'. Turn 8: 'fifty thousand rupees'. Turn 27: 'full fifty thousand rupees'. Turn 52: Confirms 'five thousand three hundred rupees every month' (new amount). Amounts changed mid-call (50k → 48k → 29.5k → 5.3k/month) but the 50k figure was repeated multiple times.",
+            "verdict": "partial",
+            "reasoning": "The TOS figure of 50,000 was repeated four times without customer request or new context, but the conversation did evolve meaningfully toward a payment plan. The repetition was more a function of the negotiation than pure looping."
+          },
+          "Q2": {
+            "evidence": "Turn 50: 'We can certainly set up a payment plan for you.' Turn 52: 'you'd like to pay five thousand three hundred rupees every month starting April first.' Payment plans/installment arrangements are not in the system prompt — only lump-sum TOS/POS/settlement amounts are authorized. Turn 60-62: Agent endorsed contacting 'Mr. Rajan Kumar' for payment link without verifying who this is.",
+            "verdict": "not_met",
+            "reasoning": "The agent fabricated a structured monthly installment payment plan (5,300/month) which is entirely absent from the system prompt. The authorized amounts are only lump-sum TOS, POS, and settlement. Additionally endorsing an unverified third party (Rajan Kumar) for payment link transmission is a further unauthorized commitment."
+          },
+          "Q3": {
+            "evidence": "Turn 52: Agent confirms 'five thousand three hundred rupees every month starting April first' — this is a confirmation of what was discussed in Turns 47-51, not re-asking from scratch. Turn 27: Agent re-confirms the April 1 date that was already established at Turn 17.",
+            "verdict": "met",
+            "reasoning": "Confirmations in Turns 52 and 27 are legitimate verification of already-provided information, not re-asking from scratch. No requirement for the borrower to repeat information they had already given."
+          },
+          "Q4": {
+            "evidence": "Turn 6: 'Got it. I understand it can be tough' before pivoting to options — acknowledgment present but generic. Turn 14: 'I'm listening. Please go ahead.' — appropriate. Turn 27: 'I understand. So, you're saying...' — acknowledges before restating. Turn 44: Acknowledges audio issue before responding.",
+            "verdict": "met",
+            "reasoning": "Agent generally acknowledged before pivoting, though acknowledgments leaned generic ('I understand') rather than specific. The consistent pattern of acknowledgment before topic change is present throughout the call."
+          },
+          "Q5": {
+            "evidence": "Turn 46: ~80 words — recaps connectivity, pulls account, references customer's 29,500 figure, mentions 48,075 rupees, all in one turn. Turn 50: ~75 words — confirms installment plan, mentions penalty removal, asks for confirmation. Turn 52: ~55 words — confirmation summary.",
+            "verdict": "not_met",
+            "reasoning": "Turns 46, 50, and 52 all exceed 50 words and each pack multiple pieces of information (amounts + situation recap + question + confirmation) into a single voice utterance. This is inappropriate for a phone conversation where the listener cannot absorb multi-part monologues."
+          }
+        },
+        "empathy": {
+          "E1": {
+            "evidence": "Turn 5: Customer says 'These days, we can't arrange any money.' Turn 6: Agent responds 'Got it. I understand it can be tough. I can help you with some options to manage the fifty thousand' — generic acknowledgment immediately followed by business pivot. No follow-up empathy when customer struggled with connectivity (Turns 10, 13, 19, 38, 43).",
+            "verdict": "partial",
+            "reasoning": "The agent did acknowledge financial difficulty before moving on (Turn 6) but the acknowledgment was a single generic line before immediately pivoting to amounts. The customer's repeated struggles and apparent stress through connectivity issues received no empathetic recognition beyond functional 'Hello?' checks."
+          },
+          "E2": {
+            "evidence": "DPD is 180 (NPA territory). Agent used no credit score warnings, NPA mentions, or consequence language at all. Customer was willing to pay, so no escalation pressure was applied. Agent was uniformly mild despite high DPD and confirmed willingness to pay.",
+            "verdict": "met",
+            "reasoning": "Given the customer was a willing payer, not applying heavy pressure was appropriate. The system prompt authorizes urgency but the agent correctly did not escalate against a cooperative borrower. Under-pressure is a minor issue at 180 DPD but not a significant harm here."
+          },
+          "E3": {
+            "evidence": "Turn 18 (end_call triggered): Customer had just said 'April 1' and then 'Hello?' — mid-conversation. Turns 22-23: Customer was saying 'I just do I just do I just... pay the' — clearly mid-thought, agent did not wait. Turn 41: Customer says 'Turn around' (garbled) — agent says 'Let me pull up your account' suggesting it didn't process the utterance.",
+            "verdict": "partial",
+            "reasoning": "end_call was fired while the customer was still mid-conversation (Turn 18), and there are multiple instances where the agent responded before the customer finished their thought. However, much of this was driven by genuine audio fragmentation, which partially explains the behavior."
+          },
+          "E4": {
+            "evidence": "Turn 13: Customer says 'Can you please listen to me this once?' — mild frustration. Turn 14: Agent responds 'I'm listening. Please go ahead.' — calm and professional. Agent maintained respectful tone throughout.",
+            "verdict": "met",
+            "reasoning": "Agent remained professional and respectful even when the customer expressed mild frustration. No aggression, sarcasm, or condescension was observed."
+          }
+        },
+        "outcome": {
+          "O1": {
+            "evidence": "Turn 52-53: Agent confirms '5,300 rupees every month starting April 1' — customer says 'Yeah.' Turn 62-63: Customer confirms 'I'll do it from April 1, sir.' The specific date (April 1) was confirmed by the borrower. The monthly amount (5,300) was implied by the customer's 'XX,XXX' and confirmed through back-and-forth. However, the total number of installments and overall settlement figure were never established.",
+            "verdict": "partial",
+            "reasoning": "A specific start date was confirmed by the borrower, and a monthly amount was agreed upon. However, the total outstanding balance under the plan, the duration, and whether this constitutes a legitimate authorized arrangement (it doesn't — payment plans are not in the system prompt) leaves the resolution incomplete. Customer also references a third party (Rajan Kumar) for the payment link, which was not verified."
+          },
+          "O2": {
+            "evidence": "end_call called after Turn 18 with reason 'resolved_callback_scheduled' — but no resolution had been reached; only a vague 'April 1' date with no amount confirmed. The call continued for 48 turns. proceed_to_dispute called after Turn 26 — customer was confirming payment, not disputing. schedule_callback called after Turn 16 for April 1 — this was before customer confirmed April 1 for payment (Turn 17), so slightly premature but close.",
+            "verdict": "not_met",
+            "reasoning": "end_call was triggered 48 turns prematurely with an incorrect reason ('resolved_callback_scheduled' when actual resolution was a payment plan commitment). proceed_to_dispute was triggered with no dispute signal. These are fundamental function-call accuracy failures."
+          },
+          "O3": {
+            "evidence": "Customer enters with financial hardship and exits with a specific monthly payment commitment (5,300/month from April 1). Customer's concern about extra charges was acknowledged. However, the payment plan committed to is not an authorized product — the borrower may be misled about what's actually available. The fabricated amount '48,075 rupees' may cause confusion when the customer later interacts with DemoLender.",
+            "verdict": "partial",
+            "reasoning": "The borrower ends in a somewhat better position — they made a commitment and felt heard. However, the fabricated payment plan, the unverified amount (48,075), and the unauthorized endorsement of a third-party contact (Rajan Kumar) mean the borrower was given inaccurate information that could create confusion or distrust when they follow up with the lender."
+          }
+        }
+      },
+      "worst_messages": [
+        {
+          "turn_index": 4,
+          "agent_message": "Hello? There's fifty thousand rupees pending on your DemoLender loan. Have you been facing any difficulties?",
+          "issue": "The agent disclosed the specific loan amount and debt details without first confirming the borrower's identity. The only input from the customer at this point was a garbled noise and a 'Hello?' — no identity was verified. This violates P1 compliance: debt details must only be shared with the confirmed borrower.",
+          "category": "protocol_violation",
+          "should_have_done": "Ask for identity confirmation before disclosing any amounts. E.g.: 'Am I speaking with Deepa Krishnan?' — only after a clear affirmative should any loan or amount details be mentioned.",
+          "impact": "Set the precedent for the entire call that identity verification was skipped. All subsequent amount disclosures (Turn 6, 27, 46, 50) were made to an unconfirmed party. This is a regulatory compliance failure with potential legal exposure, and it also meant the agent lost the natural opening structure that would have given the call more authority and coherence."
+        },
+        {
+          "turn_index": 20,
+          "agent_message": "Yes, I heard you. You'll pay on April one. I have scheduled a callback for you then. Is there anything else I can help you with today regarding your DemoLender loan?",
+          "issue": "The agent treated a partial, fragmented customer utterance ('I'll pay it on April 1') as a complete, confirmed resolution and immediately wrapped up the call — triggering end_call after this turn. The customer had not confirmed an amount, a method, or any plan details. The customer was clearly still mid-thought across Turns 15–18. Closing here was a fundamental misread of the situation.",
+          "category": "premature_action",
+          "should_have_done": "Acknowledge the April 1 date as a positive signal but stay in the conversation to confirm specifics: 'April 1 — noted. And when you pay on that date, would you be looking to pay the full fifty thousand, or would a reduced closure amount be easier for you?' This would have kept the conversation on track without the phase collapse that followed.",
+          "impact": "Triggered end_call ('resolved_callback_scheduled') 48 turns before the call actually ended, causing complete phase governance breakdown. The call then continued with no active phase framework — no proceed_to_negotiation, no proceed_to_closing were ever properly called. This forced the agent into improvised negotiation territory, directly leading to the fabricated payment plan and invented amounts in the turns that followed."
+        },
+        {
+          "turn_index": 50,
+          "agent_message": "Understood. You want to start paying five thousand three hundred rupees monthly, beginning April first. We can certainly set up a payment plan for you. Let me confirm the exact details of your outstanding balance and how we can best accommodate your request while addressing your concerns about additional charges. I see here that your current pending amount is forty-eight thousand seventy-five rupees. We can remove penalty charges from that amount. Would you like me to proceed with a payment plan of five thousand three hundred rupees per month?",
+          "issue": "This turn contains two severe fabrications: (1) 'forty-eight thousand seventy-five rupees' — a number that appears nowhere in the customer data and was invented by the agent; (2) 'We can certainly set up a payment plan for you' — the system prompt authorizes only lump-sum TOS, POS, and settlement amounts; structured monthly installment plans are not an authorized offer. The agent also echoed and validated the customer's unverified 29,500 figure earlier and then invented a completely different total here.",
+          "category": "fabrication",
+          "should_have_done": "Do not offer a payment plan that is not authorized. Do not invent a balance figure. Instead, use an amount dispute acknowledgment and redirect to the authorized offer: 'I want to make sure we're working from the right number. The figure I have is fifty thousand rupees, but I can note your concern about the amount and we can verify the exact principal with DemoLender. The cleanest path is still the closure offer — once confirmed, you'd only pay the principal with all penalties removed. Would that work for you on April 1?'",
+          "impact": "The borrower committed to a fabricated monthly installment plan of 5,300 rupees against a fabricated balance of 48,075 rupees — neither of which DemoLender will recognize. When the customer follows up with 'Mr. Rajan Kumar' expecting this plan, the mismatch will create confusion, erode trust, and potentially result in no payment at all. The agent also implicitly endorsed an unverified third-party contact for payment link delivery, compounding the unverified commitments made on behalf of the lender."
+        }
+      ]
+    }
+  ]
+}

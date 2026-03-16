@@ -1,0 +1,61 @@
+{
+  "call_id": "call_08",
+  "customer": {
+    "name": "Suresh Rao",
+    "pending_amount": "fifty thousand",
+    "closure_amount": "zero",
+    "settlement_amount": "",
+    "dpd": "180"
+  },
+  "disposition": "WRONG_NUMBER",
+  "phases_visited": [
+    "opening",
+    "discovery"
+  ],
+  "total_turns": 9,
+  "transcript": [
+    {
+      "speaker": "agent",
+      "text": "Hello, this is Alex from DemoCompany, calling about your DemoLender loan. We reviewed your account and have a good offer to help close it. Can we talk for a moment?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Hello? Hi, Harry."
+    },
+    {
+      "speaker": "agent",
+      "text": "Hi there! I'm Alex from DemoCompany — I'm calling for Suresh Rao. Am I speaking with Suresh?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Hello?"
+    },
+    {
+      "speaker": "agent",
+      "text": "Suresh, can you hear me?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Hello, Evan."
+    },
+    {
+      "speaker": "agent",
+      "text": "Hi, this is Alex — can you hear me clearly? I'm looking for Suresh Rao."
+    },
+    {
+      "speaker": "customer",
+      "text": "Hello?"
+    },
+    {
+      "speaker": "agent",
+      "text": "Suresh, I'm having trouble connecting with you. I'll try reaching you again shortly. Take care — we'll be in touch soon. Goodbye."
+    }
+  ],
+  "function_calls": [
+    {
+      "turn": 4,
+      "function": "end_call",
+      "params": "reason=\"callback_scheduled\""
+    }
+  ]
+}

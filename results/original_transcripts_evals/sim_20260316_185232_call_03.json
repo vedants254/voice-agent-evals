@@ -1,0 +1,99 @@
+{
+  "call_id": "call_03",
+  "timestamp": "20260316_185232",
+  "customer_name": "Anjali Reddy",
+  "disposition": "ALREADY_PAID",
+  "total_turns": 17,
+  "function_calls": [
+    {
+      "turn": 4,
+      "function": "switch_language",
+      "params": "language=\"mr\""
+    },
+    {
+      "turn": 6,
+      "function": "proceed_to_discovery",
+      "params": ""
+    },
+    {
+      "turn": 16,
+      "function": "schedule_callback",
+      "params": "preferred_time=\"as soon as verification is complete\", callback_type=\"normal\", reason=\"claims_already_paid\""
+    },
+    {
+      "turn": 16,
+      "function": "end_call",
+      "params": "reason=\"claims_already_paid\""
+    }
+  ],
+  "conversation": [
+    {
+      "role": "agent",
+      "text": "Hello, this is Alex from DemoCompany, calling about your DemoLender loan. We reviewed your account and have a good offer to help close it. Can we talk for a moment?"
+    },
+    {
+      "role": "customer",
+      "text": "Hello ? kon boltay ?"
+    },
+    {
+      "role": "agent",
+      "text": "Yeh Alex bol raha hoon, DemoCompany se. Kya aap Anjali Reddy bol rahi hain?"
+    },
+    {
+      "role": "customer",
+      "text": "hello? mla samjat nahi ahe"
+    },
+    {
+      "role": "agent",
+      "text": "Namaskaar, mi Alex ahe, DemoCompany madhun. Tumhi Anjali Reddy aahaat ka?"
+    },
+    {
+      "role": "customer",
+      "text": "oh ho mi anjali bolat ahe"
+    },
+    {
+      "role": "agent",
+      "text": "Anjali, tumchya DemoLender loan var 50000 rupees thaklelе ahet. Pan aapan sagale charges kadhun tumchi loan sirf 35000 rupees madhe band karu shakto."
+    },
+    {
+      "role": "customer",
+      "text": "oh oh pan me already bharte ahet paise"
+    },
+    {
+      "role": "agent",
+      "text": "Samjhle, Anjali. Tumhi sangta ki payment already zali ahe. Kiti divas zaale payment karun, ani konta method vaparlat — bank transfer, app, ki cash?"
+    },
+    {
+      "role": "customer",
+      "text": "mi adhich august 26 la 9908 rupees chi payment keliley"
+    },
+    {
+      "role": "agent",
+      "text": "Okay Anjali, noted. Te payment konyakade kelit — bank transfer, UPI, ki app? Ani kahi reference number ya UTR number ahe ka tyacha?"
+    },
+    {
+      "role": "customer",
+      "text": "ho ahe mazya kade."
+    },
+    {
+      "role": "agent",
+      "text": "Chhan, to reference number sanga mala, mi note karun gheto."
+    },
+    {
+      "role": "customer",
+      "text": "CM552522.."
+    },
+    {
+      "role": "agent",
+      "text": "CM552522 — noted. Pudhcha kaahi ahe number madhe, ki bas ithaparyantach ahe?"
+    },
+    {
+      "role": "customer",
+      "text": "bas yedhach"
+    },
+    {
+      "role": "agent",
+      "text": "Theek ahe Anjali, mi he sagle note kele ahet — August 26 la 9908 rupees, reference number CM552522. He mi aapla verification team la escalate karto. Tumi payment proof support@demolender.com var pan pathvu shakta.\n\nAapli team confirm karoon tumhala callback karil. Kahi problem nahi.\n\nDhanyavaad Anjali, tumcha veli ghalalyabaddal. Kalji ghya, namaskar."
+    }
+  ]
+}

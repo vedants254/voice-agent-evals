@@ -1,0 +1,118 @@
+{
+  "call_id": "call_05",
+  "customer": {
+    "name": "Deepa Krishnan",
+    "pending_amount": "fifty thousand",
+    "closure_amount": "zero",
+    "settlement_amount": "",
+    "dpd": "180"
+  },
+  "disposition": "STRONGEST_PTP",
+  "phases_visited": [
+    "opening",
+    "discovery",
+    "dispute",
+    "negotiation"
+  ],
+  "total_turns": 19,
+  "transcript": [
+    {
+      "speaker": "agent",
+      "text": "Hello, this is Alex from DemoCompany, calling about your DemoLender loan. We reviewed your account and have a good offer to help close it. Can we talk for a moment?"
+    },
+    {
+      "speaker": "customer",
+      "text": "****. Hello?"
+    },
+    {
+      "speaker": "agent",
+      "text": "Hi, am I speaking with Deepa Krishnan?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Hello? Hello? Yes. These days, we can't arrange any money."
+    },
+    {
+      "speaker": "agent",
+      "text": "I understand, Deepa. Your account currently shows fifty thousand rupees pending on your DemoLender loan. I need to check with the team on the best closure offer for you, but I do want to help you sort this out. Can you tell me a little about what's been going on?"
+    },
+    {
+      "speaker": "customer",
+      "text": "So So yeah, sir. Yes, sir. I I can pay it on"
+    },
+    {
+      "speaker": "agent",
+      "text": "You can pay it on when, Deepa? What date were you thinking?"
+    },
+    {
+      "speaker": "customer",
+      "text": "hello? No. No. No. I can pay."
+    },
+    {
+      "speaker": "agent",
+      "text": "That's great to hear. When would you be able to make the payment, Deepa?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Hello? Can you sell can you please listen to me this once?"
+    },
+    {
+      "speaker": "agent",
+      "text": "Of course, Deepa. I'm listening. Go ahead."
+    },
+    {
+      "speaker": "customer",
+      "text": "Hello? Yeah. I I'll pay it on"
+    },
+    {
+      "speaker": "agent",
+      "text": "You'll pay it on — what date, Deepa? I didn't catch that."
+    },
+    {
+      "speaker": "customer",
+      "text": "I'll pay it on April 1. Sir. April 1. Hello?"
+    },
+    {
+      "speaker": "agent",
+      "text": "April 1st, noted. I'll schedule that and get back to you with the exact figures once I confirm with the team."
+    },
+    {
+      "speaker": "customer",
+      "text": "No, sir. I just do I just do I just pay the"
+    },
+    {
+      "speaker": "agent",
+      "text": "You just pay the — what, Deepa? Take your time, I'm listening."
+    },
+    {
+      "speaker": "customer",
+      "text": "amount, sir. Like, not not with extra amount, like, charges charges amount. I'll pay from April 1. Everything every year, I'll pay."
+    },
+    {
+      "speaker": "agent",
+      "text": "I understand, Deepa — you want to pay without the extra charges, starting April 1st. Let me check with the team and confirm the exact amount you'd need to pay. I'll call you back with those figures. I'll have everything ready when I call you back. Thank you for your time, Deepa. Take care. Thank you, Deepa. We'll be in touch with the exact figures. Have a good day."
+    }
+  ],
+  "function_calls": [
+    {
+      "turn": 2,
+      "function": "proceed_to_discovery",
+      "params": ""
+    },
+    {
+      "turn": 7,
+      "function": "proceed_to_closing",
+      "params": "resolution_type=\"payment_committed_april_1\""
+    },
+    {
+      "turn": 9,
+      "function": "schedule_callback",
+      "params": "preferred_time=\"April 1\", callback_type=\"wants_payment_amount\", reason=\"Borrower willing to pay principal without charges from April 1. Needs confirmed closure amount.\""
+    },
+    {
+      "turn": 9,
+      "function": "end_call",
+      "params": "reason=\"callback_scheduled\""
+    }
+  ] 
+}

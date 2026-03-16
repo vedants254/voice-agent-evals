@@ -1,0 +1,212 @@
+{
+  "timestamp": "20260316_130913",
+  "calls_evaluated": [
+    "call_03"
+  ],
+  "summary": {
+    "call_03": {
+      "score": 11.2,
+      "verdict": "bad"
+    }
+  },
+  "results": [
+    {
+      "call_id": "call_03",
+      "customer_name": "Anjali Reddy",
+      "disposition": "ALREADY_PAID",
+      "score": 11.2,
+      "verdict": "bad",
+      "dimension_scores": {
+        "communication": 0.15,
+        "protocol": 0.4,
+        "situational_intelligence": 0.0,
+        "flow_transitions": 0.0,
+        "conversation_quality": 0.0,
+        "empathy": 0.25,
+        "outcome": 0.0
+      },
+      "dimension_details": {
+        "communication": {
+          "C1": {
+            "evidence": "Turn 7: 'சரிங்க. இது' (fragment); Turn 11: 'Sari,' (fragment); Turn 16: 'சரி, உங்கள் நிறுவனத்தில்' (cut off); Turn 19: 'ஓ, அவர் ஆகஸ்ட்' (fragment); Turn 27: 'சரி,' (pure filler); Turn 31: 'மன்னிக்கவும், யூடிஆர்' (fragment); Turn 63: 'ஓகே,' (zero-information filler); Turn 82: 'ஓகே,' (filler); Turn 86: 'ஒகே,' (filler); Turn 145: 'ஓகே,' (filler). Many turns consist solely of a single word with no follow-through.",
+            "verdict": "not_met",
+            "reasoning": "Across the call there are at least 10+ turns that are sentence fragments, cut-off thoughts, or single-word filler ('Sari,', 'Okay,', 'Hmm,') that convey zero information to a voice listener. Sub-criterion (b) is badly violated throughout, and (a) fails in numerous places."
+          },
+          "C2": {
+            "evidence": "Turn 2: customer speaks Tamil; Turn 3-4: agent switches to Tamil (good). Turn 39/42: customer requests Hindi; Turn 40: agent switches (good). Turn 164/168: customer requests Tamil again; Turn 169: agent switches back. However, Turn 169-173 agent uses Romanized Tamil mixed with English ('Sari, naan ungaloda Tamil la pesuren') rather than script Tamil. Turn 40-41 also mixes Romanized Tamil in a Hindi-language turn.",
+            "verdict": "partial",
+            "reasoning": "The agent did respond to each explicit language-switch request, satisfying sub-criteria (a) and (b) broadly. However, repeated use of Romanized/transliterated Tamil rather than clean Tamil script, and occasional mid-sentence mixing not matching the customer's own pattern, represents a meaningful gap in sub-criterion (c)."
+          },
+          "C3": {
+            "evidence": "Turn 29: customer was explaining UTR and payment, agent ignored it and re-quoted amounts; Turn 55: customer just confirmed loan identity, agent re-quoted wrong amounts again; Turn 76: agent says 'आपने मुझे यूटीआर नंबर बताया नहीं है' when customer had given UTR at Turn 67; Turn 189: agent again quotes outstanding amount and asks 'what can you do' ignoring customer's repeated paid claim; Turn 203: agent pivots back to payment pressure after customer's long emotional statement about her daughter.",
+            "verdict": "not_met",
+            "reasoning": "The agent repeatedly fails to address what the customer just said — most critically, the customer's 'already paid' claim from Turn 13 onward is never acted upon, and the agent continues quoting payment amounts. Sub-criterion (a) and (c) are clearly violated across most of the call."
+          },
+          "C4": {
+            "evidence": "Turn 121: agent says 'वनिता गोविंदन, क्या आप मुझे सुन सकती हैं?' — completely wrong name (should be Anjali Reddy). Turn 45: agent says 'मैं अभिषेक, रिवरलाइन' — wrong agent name (should be Alex from DemoCompany). Turn 134: agent again calls borrower 'वनिता'.",
+            "verdict": "not_met",
+            "reasoning": "The agent used the wrong borrower name ('Vanita Govinda') at Turns 121 and 134, and introduced itself with a wrong name and wrong company at Turn 45. Both sub-criteria (a) and (b) are clearly violated, and (c) — mixing up another borrower's data — appears to have occurred."
+          }
+        },
+        "protocol": {
+          "P1": {
+            "evidence": "Turn 8: customer says 'ஆமா சார்' (yes sir) confirming identity; Turn 9: agent then discloses amounts. Identity confirmation preceded amount disclosure.",
+            "verdict": "met",
+            "reasoning": "The borrower spoke first and gave an affirmative response before amounts were disclosed. Sub-criteria (a) and (b) are both satisfied."
+          },
+          "P2": {
+            "evidence": "Turn 9: agent states '16,642 rupees' as total outstanding and '10,100 rupees' as closure amount — actual TOS is 50,000 and POS is 35,000. Turn 55: repeats same wrong figures (16,642 and 10,100). Turn 160: again cites wrong outstanding. Turn 189: again quotes 16,642 as outstanding. Customer data is TOS=50,000, POS=35,000, Settlement=25,000. None of the agent-quoted amounts match these.",
+            "verdict": "not_met",
+            "reasoning": "The agent quoted completely incorrect amounts throughout the entire call — figures that do not correspond to the customer's TOS, POS, or settlement amount. Sub-criterion (a) is severely violated across every amount disclosure. Sub-criterion (d) is met (no forbidden phrases used), but the systematic amount fabrication is a critical failure."
+          },
+          "P3": {
+            "evidence": "Turn 72: 'आपके भुगतान में देरी के अब तीन सौ तैंतीस दिन हो गए हैं' (333 days overdue — fabricated, actual DPD is 180). Turn 160: repeats 333-day DPD figure. Turn 203: 'उँगलुदैய கிரெடிட் அறிக்கையில் இது ஒரு நிலுவைத் தொகையாகக் காட்டப்படுகிறது' — continues credit-score pressure after customer claimed already paid.",
+            "verdict": "partial",
+            "reasoning": "The agent did not threaten legal action or property seizure, so sub-criterion (a) is met. However, fabricating a DPD of 333 (vs actual 180) to amplify consequences, and applying credit-score pressure to a customer who was claiming already paid, crosses into misleading consequence language under sub-criteria (b) and (c)."
+          },
+          "P4": {
+            "evidence": "Turn 101-102: Turn 100 was the agent's own utterance; customer had not yet been silent — agent immediately fires 'नमस्ते? क्या आप वहाँ हैं?' Turn 111-112: similar pattern after Turn 110 (agent's own turn). Turn 119-120: agent again fires 'नमस्ते? क्या आप वहाँ हैं?' after its own turn at 118. Turn 152: same issue after Turn 151.",
+            "verdict": "not_met",
+            "reasoning": "On multiple occasions (Turns 101-102, 111-112, 119-120, 152) the agent fires 'Hello?/Are you there?' immediately after its own speaking turn, not after any customer silence. This violates sub-criterion (a) — 'Hello?' was used as filler rather than a genuine silence check."
+          }
+        },
+        "situational_intelligence": {
+          "S1": {
+            "evidence": "Turn 13: customer says 'August 25 mey 9,900 rupees kiidayathu saar' (I paid 9,900 in August 25, didn't I?). Turns 17-18: customer says 'he said August 26 everything payment was done.' Turn 48: 'I paid 9,900 rupees on 08/26/25, UTR number will tell you.' This is clearly an ALREADY_PAID call. The system prompt disposition also confirms ALREADY_PAID. Agent called proceed_to_dispute after Turn 35 — wrong classification.",
+            "verdict": "not_met",
+            "reasoning": "The situation is clearly 'already paid' claim from Turn 13 onward. The agent failed to classify this correctly — instead triggering proceed_to_dispute (wrong) and continuing collection pressure throughout. Sub-criteria (b) and (c) are both failed."
+          },
+          "S2": {
+            "evidence": "Correct strategy for 'already paid': acknowledge claim, collect UTR and payment details, route to claims_already_paid. Actual behavior: Turns 55, 160, 189 — agent re-quotes outstanding amounts and pushes payment even while customer repeats UTR numbers. Turn 203 — continues credit-score urgency language. No end_call with 'claims_already_paid' was ever triggered.",
+            "verdict": "not_met",
+            "reasoning": "The agent never adopted the 'already paid' strategy. It applied generic collection pressure throughout, ignored the UTR verification it claimed to be doing, and never routed appropriately. Sub-criteria (a) and (b) both fail."
+          },
+          "S3": {
+            "evidence": "Turn 13: first 'already paid' signal. Turn 21: agent asks for UTR (partial acknowledgment). Turn 29: agent goes back to quoting amounts. Turn 55: agent re-quotes amounts 40 turns after already-paid claim. Turn 160: credit-score pressure 147 turns after already-paid signal. Turn 189: re-quotes outstanding amount. Turn 196-198: customer gives long emotional account about her daughter's suffering — Turn 199/201 agent offers generic 'I understand your concern' then pivots back to payment.",
+            "verdict": "not_met",
+            "reasoning": "The agent never meaningfully pivoted after the 'already paid' signal. At best it asked for UTR once but then reverted to collection pressure within 2 turns. The emotional distress at Turns 196-198 received a formulaic response followed by immediate payment pressure. Sub-criterion (c) — meaningful adaptation — was never achieved."
+          },
+          "S4": {
+            "evidence": "Customer signaled 'already paid' at Turn 13, repeated at Turns 17-18, 48, 71, 105-109, 161-162, and throughout. Agent looped the same collection/UTR cycle from Turn 21 to Turn 204 — over 180 turns. No end_call was ever triggered. The conversation ended without any exit action. Customer's clear signal was never acted upon.",
+            "verdict": "not_met",
+            "reasoning": "The agent looped the same UTR request + amount quoting cycle for 180+ turns without a strategy change or exit. No end_call was triggered despite a crystal-clear 'already paid' signal. All sub-criteria failed."
+          }
+        },
+        "flow_transitions": {
+          "F1": {
+            "evidence": "proceed_to_discovery called after Turn 6 — before identity was fully confirmed and before amounts were disclosed (amounts come at Turn 9, after the discovery function call). proceed_to_dispute called after Turn 35 where customer said 'ஹிந்திமே பொறுத்துட்டா' (wait in Hindi) — not a dispute. No proceed_to_negotiation or proceed_to_closing was ever called. No end_call triggered.",
+            "verdict": "not_met",
+            "reasoning": "Discovery was triggered prematurely (before amounts were disclosed), dispute was triggered on a non-dispute signal, and the call never progressed beyond that. The logical phase progression was broken from the start."
+          },
+          "F2": {
+            "evidence": "Discovery was entered at Turn 6 (after customer's 'hello' only). No substantive discovery questions were asked about why customer hasn't paid or financial situation. Instead, agent immediately moved to quoting amounts (Turn 9). The discovery phase was completely skipped as a substantive step.",
+            "verdict": "not_met",
+            "reasoning": "No discovery questions were posed about root cause, financial situation, or willingness to pay. The agent jumped straight to amount disclosure. Sub-criteria (a) and (b) are both unmet."
+          },
+          "F3": {
+            "evidence": "proceed_to_dispute called after Turn 35. Turn 35 content: 'ஹிந்திமே பொறுத்துட்டா' — meaning 'wait in Hindi' or 'speak in Hindi.' This is a language request, not a loan dispute. The actual content of the call (already paid claim) was also not a dispute of loan existence — it was a payment claim. No explicit dispute statement ('this loan is not mine', 'this is fraud') was ever made.",
+            "verdict": "not_met",
+            "reasoning": "proceed_to_dispute was triggered on a language-switch request — a clear misfiring. The actual situation was 'already paid,' not a loan legitimacy dispute. Sub-criterion (a) fails; the borrower never explicitly disputed loan existence."
+          },
+          "F4": {
+            "evidence": "end_call was never triggered at any point in the 204-turn transcript. The call never formally ended from the agent's side. No closing phase was entered.",
+            "verdict": "not_met",
+            "reasoning": "Since end_call was never called, there is no post-end-call continuation issue per se, but the failure to call end_call at all (despite clear signals from Turn 13 onward) represents a complete breakdown of exit handling. Sub-criterion (c) is violated."
+          }
+        },
+        "conversation_quality": {
+          "Q1": {
+            "evidence": "Amount 16,642 / 10,100 quoted at Turns 9, 55, 160, 189 — four times, same wrong numbers. UTR request made at Turns 21, 49, 51, 57, 67 (agent confirmed), 74, 76, 98, 100, 104, 114, 123, 125 — over 12 times. Credit score/DPD pressure repeated at Turns 72, 160, 203.",
+            "verdict": "not_met",
+            "reasoning": "The same wrong amounts were quoted at least four times; the same UTR request was issued more than a dozen times even after UTR was already provided. Sub-criteria (a), (b), and (c) are all violated — the call has a severe stuck-in-a-loop quality throughout."
+          },
+          "Q2": {
+            "evidence": "Turn 45: 'मैं अभिषेक, रिवरलाइन' — agent introduces itself with a wrong name and company. Turn 72: claims DPD is 333 days (actual is 180). Turn 160: repeats 333-day DPD claim. Amounts quoted (16,642 / 10,100) do not exist in the customer data. Turn 67: agent confirms UTR 'CM552522' as if it found it, then at Turn 69 says it is hearing the claim for the first time.",
+            "verdict": "not_met",
+            "reasoning": "The agent fabricated a wrong identity, inflated DPD by nearly double (333 vs 180), and quoted amounts with no basis in the customer data. These are not minor slips — they constitute systematic fabrication across the call."
+          },
+          "Q3": {
+            "evidence": "UTR CM552522 was given by customer at Turn 67 and agent confirmed it ('ठीक है, मैं यह यूटीआर नंबर नोट कर रहा हूँ'). Then at Turn 74: 'क्या आप कृपया मुझे वह नंबर बता सकती हैं?' — re-asking from scratch. Turn 76: 'आपने मुझे यूटीआर नंबर बताया नहीं है' — denying the number was given. Then agent goes through the entire UTR collection process again (Turns 79-96).",
+            "verdict": "not_met",
+            "reasoning": "The agent re-asked for information the customer had already provided multiple times, even explicitly denying that the UTR had been shared when it had. This is a clear violation of sub-criterion (a)."
+          },
+          "Q4": {
+            "evidence": "Turn 29: customer talking about payment/UTR, agent pivots back to quoting amounts without acknowledging the payment claim. Turn 55: customer confirms identity, agent re-quotes amounts. Turn 178-182: customer gives extended frustrated feedback about speaking too fast, agent responds with brief 'sorry' then immediately pivots back to UTR/amounts. Turns 196-203: customer shares emotional story about daughter, agent says 'I understand your concern' then immediately resumes collection pressure.",
+            "verdict": "not_met",
+            "reasoning": "Across the call, acknowledgments are formulaic ('मैं समझ गया', 'நான் புரிந்து கொள்கிறேன்') without engaging with the substance. The agent consistently steamrolls past customer input to deliver scripted lines. Sub-criteria (b) and (c) are both violated repeatedly."
+          },
+          "Q5": {
+            "evidence": "Turn 72: very long multi-clause message covering payment amount + credit score + DPD (333 days) + UTR request — well over 50 words. Turn 160: long message combining UTR failure + DPD + credit consequences + request for more info. Turn 189: long message re-quoting outstanding + asking what can be done. Turn 203: very long Tamil message combining credit report + consequences + asking customer what to do.",
+            "verdict": "not_met",
+            "reasoning": "Multiple turns (72, 160, 189, 203) significantly exceed the 50-word limit for voice and dump multiple pieces of information simultaneously. Sub-criteria (a) and (b) are both violated."
+          }
+        },
+        "empathy": {
+          "E1": {
+            "evidence": "Turn 105-109: customer explains frustration about receiving calls after paying — agent responds generically ('I understand your trouble') then continues verifying UTR. Turns 196-198: customer gives extensive, emotional account of her daughter's education loan difficulties, the suffering caused, and unfair treatment — agent at Turn 199-201 responds with generic 'நான் உங்க கவலையைப் புரிந்து கொள்கிறேன்' and at Turn 203 immediately pivots back to payment pressure.",
+            "verdict": "not_met",
+            "reasoning": "When the customer expressed significant emotional distress (Turns 196-198), the acknowledgment was generic and immediately followed by resumed collection pressure. The distress was not specifically addressed before business resumed. Sub-criteria (a) and (b) both fail; sub-criterion (c) — ignoring difficulty — also applies."
+          },
+          "E2": {
+            "evidence": "Customer claimed already paid from Turn 13. At Turn 72, agent applies credit score/DPD pressure (with fabricated 333-day DPD). At Turn 160, continues same pressure. At Turn 203, continues payment urgency after customer's emotional outburst. Customer is not stalling — she is claiming payment was already made.",
+            "verdict": "not_met",
+            "reasoning": "Applying credit-score and NPA consequence pressure to a customer who is claiming already paid is entirely inappropriate. The agent escalated pressure when it should have suspended it. Sub-criteria (a) and (d) are both violated."
+          },
+          "E3": {
+            "evidence": "Turn 176-182: customer gives extended feedback about being spoken to too fast and not being listened to — agent responds with short apology but no real space given. Multiple fragment turns (7, 11, 16, 19, 27) suggest agent cut itself off, possibly interrupting customer. Turn 93: customer explicitly says 'take it easy, my voice is going away, speak slowly' — agent at Turn 94 starts again with 'sorry' but at Turn 96 rushes through the UTR confirmation. Customer at Turn 178 explicitly says the agent speaks 'like a computer.'",
+            "verdict": "not_met",
+            "reasoning": "The customer explicitly complained multiple times (Turns 93, 137, 174, 176-182) about the agent speaking too fast and not listening. The agent acknowledged but did not meaningfully change behavior. Sub-criteria (a) and (c) are violated."
+          },
+          "E4": {
+            "evidence": "When customer became frustrated at Turns 176-182 and 196-204, agent maintained apologies and did not match aggression. Tone remained relatively calm and deferential even under pressure. Turn 195: 'நான் உங்க கருத்தை கேட்கிறேன்' (I am listening to your views).",
+            "verdict": "met",
+            "reasoning": "Despite being provoked by a frustrated customer, the agent did not become aggressive, sarcastic, or dismissive. It consistently apologized and maintained a respectful tone. Both sub-criteria (a) and (b) are satisfied."
+          }
+        },
+        "outcome": {
+          "O1": {
+            "evidence": "No end_call was ever triggered. No PTP was obtained. No callback was scheduled. No dispute was properly routed. No claims_already_paid resolution was reached. The call ends at Turn 204 with the customer still frustrated and unresolved.",
+            "verdict": "not_met",
+            "reasoning": "The call ended with absolutely no actionable resolution — no committed payment, no scheduled callback, no routing to the correct disposition. All sub-criteria fail."
+          },
+          "O2": {
+            "evidence": "proceed_to_dispute called after Turn 35 (a language-switch request — incorrect trigger). proceed_to_discovery called after Turn 6 (before amounts disclosed — premature). No end_call was ever triggered despite the call disposition being ALREADY_PAID. No schedule_callback called. No claims_already_paid end_call reason ever used.",
+            "verdict": "not_met",
+            "reasoning": "Both function calls that were made (proceed_to_discovery and proceed_to_dispute) were triggered at wrong moments or for wrong reasons. The required function (end_call with 'claims_already_paid') was never called. Sub-criteria (a) and (c) are both clearly violated."
+          },
+          "O3": {
+            "evidence": "Customer arrived cooperative and willing to explain payment, provided UTR twice. By Turn 176-182 she was expressing that the agent talks 'like a computer' and won't listen. By Turn 196-204 she is deeply frustrated, recounting emotional family hardship, and ending with 'I'm asking you to just note that payment was made.' Agent quoted wrong amounts (16,642 / 10,100 vs actual 50,000 / 35,000), used wrong name, fabricated DPD, and never acknowledged the already-paid claim properly.",
+            "verdict": "not_met",
+            "reasoning": "The borrower ended the call in a materially worse position — more frustrated, misinformed about her own loan amounts, addressed by the wrong name, and with her payment claim unresolved. Poor agent handling converted a cooperative borrower into a hostile one. All sub-criteria failed."
+          }
+        }
+      },
+      "worst_messages": [
+        {
+          "turn_index": 9,
+          "agent_message": "ஆமாம். இது உங்கள் DemoLender கல்வி கடன் பற்றி. உங்களது நிலுவைத் தொகை பதினாறு ஆயிரத்து அறுநூற்று நாற்பத்தி இரண்டு ரூபாய். ஆனால், அனைத்து கட்டணங்களையும் நீக்கி, பத்தாயிரத்து நூறு ரூபாய்க்கு உங்கள் கடனை முடித்துக்கொள்ளலாம். இதைப்பற்றி பேச விரும்புகிறீர்களா?",
+          "issue": "The agent disclosed completely fabricated amounts — 16,642 rupees TOS and 10,100 rupees POS — bearing no relation to the customer's actual data (TOS: 50,000; POS: 35,000; settlement: 25,000). Additionally, proceed_to_discovery was fired immediately after this turn, before the customer had even responded meaningfully to the amounts, and crucially before the 'already paid' signal had been properly acknowledged. The agent also had not yet confirmed the borrower's identity before disclosing these figures.",
+          "category": "fabrication",
+          "should_have_done": "Before disclosing any amounts, first confirm identity: 'Anjali Reddy-a pesuren, sari-a?' Then, using the correct figures: 'Ungal total outstanding fifty thousand rupees. Aana, ella charges-um neeki, thirty five thousand rupees-la loan close pannalam.' Then pause and listen before making any phase transition — the customer's first substantive response (Turn 13) contained the critical 'already paid' signal that should have redirected the entire call.",
+          "impact": "Every single amount quoted for the remainder of the 200-turn call was wrong. The customer's real payment claim (Turn 13 onward) was never matched against correct figures, making UTR verification meaningless. All subsequent credit-score pressure and closure offers were built on invented numbers, destroying any credibility the agent had and creating irreparable confusion about what was actually owed."
+        },
+        {
+          "turn_index": 72,
+          "agent_message": "जी मैं समझ सकता हूँ कि आपने नौ हज़ार नौ सौ आठ रुपये जमा किए हैं। मैं यह भी समझता हूँ कि आपके क्रेडिट स्कोर पर इसका असर हो रहा होगा क्योंकि आपके भुगतान में देरी के अब तीन सौ तैंतीस दिन हो गए हैं। क्या आप मुझे अपना यूटीआर नंबर बता सकती हैं ताकि मैं इसे सत्यापित कर सकूँ?",
+          "issue": "This turn stacks three severe failures simultaneously. (1) Fabrication: the DPD is stated as 333 days when the actual DPD is 180 — nearly double, a figure that appears to have been invented or pulled from another account. (2) Wrong strategy: applying NPA/credit-score pressure to a customer who is actively claiming she has already paid is a direct protocol violation — consequence language is only appropriate for non-paying customers. (3) Ignoring input: the customer had already provided the UTR number (CM552522 at Turn 67, confirmed at Turn 68), yet the agent asked for it again as though it had never been given, while simultaneously addressing her as 'Vanita' (wrong person's name).",
+          "category": "fabrication",
+          "should_have_done": "The agent had the UTR (CM552522) from Turn 67. The correct response was: 'Aapne jo UTR diya — CM552522 — woh maine note kar liya hai. Yeh ek already-paid claim hai, main ise DemoLender ke saath verify karne ke liye flag kar raha hoon. Jab tak confirmation aata hai, aapko dobara call nahi aayega. Kya aapke paas payment ka screenshot ya bank statement hai jo aap support@demolender.com pe bhej sakti hain, taaki yeh jaldi resolve ho?' Then immediately call end_call with reason 'claims_already_paid'.",
+          "impact": "This turn locked the call into a destructive loop: the agent kept re-requesting a UTR that had already been provided, applied escalating pressure on a customer with a legitimate payment claim, and inflated the DPD to manufacture urgency. The customer's trust collapsed completely after this point (visible in Turns 178–198), she began questioning whether the agent was a computer, and the call deteriorated into sustained emotional distress with zero chance of resolution."
+        },
+        {
+          "turn_index": 160,
+          "agent_message": "मैं अभी भी इसे सत्यापित करने की कोशिश कर रहा हूँ, लेकिन मुझे इस यूटीआर नंबर से कोई रिकॉर्ड नहीं मिल रहा है। आपका क्रेडिट स्कोर प्रभावित हो रहा है क्योंकि आपके भुगतान में देरी के अब तीन सौ तैंतीस दिन हो गए हैं। अगर यह भुगतान सत्यापित नहीं होता है, तो यह आपके क्रेडिट रिपोर्ट पर नकारात्मक असर डालना जारी रखेगा। क्या आप कुछ और जानकारी देना चाहेंगी जो मुझे इसे खोजने में मदद कर सके?",
+          "issue": "By Turn 160, the agent has been looping the same UTR-not-found + credit-pressure cycle for roughly 90 turns. This turn repeats the fabricated DPD of 333 for the second time, resumes credit-score consequence language against an already-paid claimant, and asks for 'more information' when the customer has already provided the UTR twice in two different formats. The agent had no real-time system access and was performing a fictional verification, yet continued to string the customer along rather than acknowledging the limits of what it could do on the call and routing appropriately.",
+          "category": "wrong_strategy",
+          "should_have_done": "At this point — far past any reasonable verification window — the agent should have acknowledged the limits clearly and exited: 'Anjali-ji, main call pe aapka UTR real-time verify nahi kar sakta. Lekin aapne payment ka claim kiya hai — yeh important hai. Main is call ko 'already paid claim' ke saath flag kar raha hoon. Aap apna UTR aur payment screenshot support@demolender.com pe bhejiye. Aapko 2 business days mein confirmation milega aur tab tak koi aur call nahi aayega.' Then call end_call with reason 'claims_already_paid'. No further pressure of any kind.",
+          "impact": "This turn confirmed to the customer that the agent was either incapable or deliberately ignoring her. It directly triggered the extended emotional outburst at Turns 178–200, in which she accused the agent of being a computer, complained about the speed of speech, described years of harassment, and explained her daughter's hardship. The call ended with no resolution, the customer in a worse emotional state than when it started, her payment claim unresolved, and a cooperative borrower permanently alienated."
+        }
+      ]
+    }
+  ]
+}

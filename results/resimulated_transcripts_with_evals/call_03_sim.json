@@ -1,0 +1,175 @@
+{
+  "call_id": "call_03",
+  "customer": {
+    "name": "Anjali Reddy",
+    "pending_amount": "fifty thousand",
+    "closure_amount": "thirty five thousand",
+    "settlement_amount": "twenty five thousand",
+    "dpd": "180"
+  },
+  "disposition": "ALREADY_PAID",
+  "phases_visited": [
+    "opening",
+    "discovery",
+    "dispute"
+  ],
+  "total_turns": 31,
+  "transcript": [
+    {
+      "speaker": "agent",
+      "text": "Hello, this is Alex from DemoCompany, calling about your DemoLender loan. We reviewed your account and have a good offer to help close it. Can we talk for a moment?"
+    },
+    {
+      "speaker": "customer",
+      "text": "நீங்கள் அழைக்கும்"
+    },
+    {
+      "speaker": "agent",
+      "text": "நான் Alex, DemoCompany-லிருந்து பேசுகிறேன். நீங்கள் Anjali Reddy பேசுகிறீர்களா?"
+    },
+    {
+      "speaker": "customer",
+      "text": "ஹலோ ஹலோ தமிழே சொல்லுங்க"
+    },
+    {
+      "speaker": "agent",
+      "text": "ஆமாம், நான் தமிழில் பேசுகிறேன். நீங்கள் Anjali Reddy பேசுகிறீர்களா?"
+    },
+    {
+      "speaker": "customer",
+      "text": "ஆமா சார்"
+    },
+    {
+      "speaker": "agent",
+      "text": "உங்கள் கணக்கில் மொத்தம் 50000 ரூபாய் நிலுவையில் உள்ளது. ஆனால் நாங்கள் அனைத்து கட்டணங்களையும் நீக்கி, வெறும் 35000 ரூபாய்க்கு உங்கள் கடனை மூட உதவலாம்."
+    },
+    {
+      "speaker": "customer",
+      "text": "ஆ ஆ சார் ஈ"
+    },
+    {
+      "speaker": "agent",
+      "text": "இந்த 35000 ரூபாய் offer இப்போது available ஆக உள்ளது. உங்களுக்கு இதை செலுத்துவதில் என்ன சிரமம் இருக்கிறது?"
+    },
+    {
+      "speaker": "customer",
+      "text": "ஆகாகத் இத்தன இருவத்தரா ஆகஸ்ட் ஆகஸ்ட் டுவெண்டி ஃபைவ்மே ருவாயிரலாம் கிடையாது சார்"
+    },
+    {
+      "speaker": "agent",
+      "text": "புரிகிறது. இப்போது பணம் கஷ்டமாக இருக்கிறது என்று சொல்கிறீர்களா? நீங்கள் எப்போது ஏதாவது arrange பண்ண முடியும் என்று நினைக்கிறீர்கள்?"
+    },
+    {
+      "speaker": "customer",
+      "text": "ஆகா கம்பெனிலது ஆகா"
+    },
+    {
+      "speaker": "agent",
+      "text": "உங்கள் company-ல் என்ன நடக்கிறது? வேலை பிரச்சனை இருக்கிறதா?"
+    },
+    {
+      "speaker": "customer",
+      "text": "சார் அவர் வந்து என்ன சொல்லா இருந்தா ஆகஸ்ட் டுடி சிக்ஸ்ல வந்து எல்லாமே பேமெண்ட் கட்டி முடிச்சாச்சி அப்படிங்கற மாதிரி சொல்றார்ச்சது பாக்குறது இது வரேன்"
+    },
+    {
+      "speaker": "agent",
+      "text": "ஒரு நிமிடம் — ஆகஸ்ட் 26-ல் payment முழுவதும் கட்டி முடிந்துவிட்டது என்று சொல்கிறீர்களா? அல்லது அந்த தேதிக்குள் கட்டுவோம் என்று யாரோ சொன்னார்களா?"
+    },
+    {
+      "speaker": "customer",
+      "text": "யூடி ஆர் நம்புறது அப்படியே சார் வரும் சபையில் ஆயிடு இருந்து சார்"
+    },
+    {
+      "speaker": "agent",
+      "text": "சரி, UTR number இருக்கிறது என்று சொல்கிறீர்களா? அந்த number என்ன என்று சொல்ல முடியுமா?"
+    },
+    {
+      "speaker": "customer",
+      "text": "அந்த யுடி ஆர் யுடி ஆர் நம்ம இருந்தா குடுக்கிறது"
+    },
+    {
+      "speaker": "agent",
+      "text": "சரி, அந்த UTR number என்னவென்று சொல்லுங்கள், நான் note பண்ணிக்கிறேன்."
+    },
+    {
+      "speaker": "customer",
+      "text": "ஏம்மா அது தோழி இந்த இடத்துல கால வந்துட்டோம் இந்த காலு வந்துட்டு இருங்க"
+    },
+    {
+      "speaker": "agent",
+      "text": "சரி, நான் இருக்கிறேன். UTR number கிடைக்கும்போது சொல்லுங்கள்."
+    },
+    {
+      "speaker": "customer",
+      "text": "நானே இருக்கு"
+    },
+    {
+      "speaker": "agent",
+      "text": "சரி, இப்போது UTR number சொல்லுங்கள், நான் note பண்ணிக்கிறேன்."
+    },
+    {
+      "speaker": "customer",
+      "text": "ரென்ஸ் அப்படி லைன்ல இருந்து சொல்லிட்டே இந்த டமுக்கு அனுப்புனதுக்கான"
+    },
+    {
+      "speaker": "agent",
+      "text": "சரி, அந்த UTR number-ஐ support@demolender.com என்ற email-க்கு payment proof-ஆக அனுப்பலாம். நான் இதை verification team-கிட்ட escalate பண்றேன், அவங்க confirm பண்ணி உங்           களுக்கு callback பண்ணுவாங்க."
+    },
+    {
+      "speaker": "customer",
+      "text": "யூடிஆர் நம்பர் பாத்தாதான் ஹலோ சார் இந்த யூடி ஆர் நம்பர்"
+    },
+    {
+      "speaker": "agent",
+      "text": "ஆமா, UTR number பாருங்கள், கிடைக்கும்போது சொல்லுங்கள், நான் இங்கே இருக்கிறேன்."
+    },
+    {
+      "speaker": "customer",
+      "text": "சி எம்ஐ யூடியா சிஎம்"
+    },
+    {
+      "speaker": "agent",
+      "text": "ஆமா, தொடர்ந்து சொல்லுங்கள், கேட்கிறேன்."
+    },
+    {
+      "speaker": "customer",
+      "text": "அப்ப இருந்தீங்க இந்த மாதிரி போட்டுட்டா"
+    },
+    {
+      "speaker": "agent",
+      "text": "சரி, UTR number சரியாக கிடைக்கவில்லை என்று தெரிகிறது. நீங்கள் அந்த number-ஐ support@demolender.com-க்கு அனுப்புங்கள், எங்கள் team verify பண்ணி உங்களுக்கு call பண்ணுவ                வாங்க. சரி Anjali, நான் இதை verification team-கிட்ட escalate பண்றேன். Payment proof-ஐ support@demolender.com-க்கு அனுப்புங்கள். நாங்கள் உங்களுக்கு callback பண்ணுவோம். நன்றி, வணக்கம்."
+    }
+  ],
+  "function_calls": [
+    {
+      "turn": 1,
+      "function": "switch_language",
+      "params": "language=\"ta\""
+    },
+    {
+      "turn": 2,
+      "function": "switch_language",
+      "params": "language=\"ta\""
+    },
+    {
+      "turn": 3,
+      "function": "proceed_to_discovery",
+      "params": ""
+    },
+    {
+      "turn": 4,
+      "function": "proceed_to_discovery",
+      "params": ""
+    },
+    {
+      "turn": 15,
+      "function": "schedule_callback",
+      "params": "preferred_time=\"as soon as possible\", callback_type=\"normal\", reason=\"claims_already_paid - customer says payment was made, UTR number unclear, needs verification\""
+    },
+    {
+      "turn": 15,
+      "function": "end_call",
+      "params": "reason=\"claims_already_paid\""
+    }
+  ]
+}

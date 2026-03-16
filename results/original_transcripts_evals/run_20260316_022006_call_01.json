@@ -1,0 +1,259 @@
+{
+  "timestamp": "20260316_022006",
+  "calls_evaluated": [
+    "call_01"
+  ],
+  "summary": {
+    "call_01": {
+      "score": 77.2,
+      "verdict": "good"
+    }
+  },
+  "results": [
+    {
+      "call_id": "call_01",
+      "customer_name": "Priya Sharma",
+      "disposition": "PTP",
+      "score": 77.2,
+      "verdict": "good",
+      "dimension_scores": {
+        "communication": 0.67,
+        "protocol": 1.0,
+        "situational_intelligence": 0.75,
+        "flow_transitions": 0.5,
+        "conversation_quality": 0.9,
+        "empathy": 0.75,
+        "outcome": 0.83
+      },
+      "dimension_details": {
+        "communication": {
+          "C1": {
+            "evidence": "Turn 24 agent says only 'Yes,' (sentence fragment); Turn 28 agent says only 'I understand' (incomplete, conversation-cutting fragment); Turn 5 'Okay, give me just a moment...' and Turn 18 'Let me pull up your account details...' are stalling fillers with no informational content; Turn 16 says only 'Great.' after a customer request to explain.",
+            "verdict": "partial",
+            "reasoning": "Most agent turns are coherent, but several are sentence fragments or empty filler phrases that break conversational flow, particularly Turns 24 and 28 which appear to have been cut off mid-response."
+          },
+          "C2": {
+            "evidence": "Entire conversation is in English; customer never requests a language switch.",
+            "verdict": "not_applicable",
+            "reasoning": "No language switch was requested or relevant in this call."
+          },
+          "C3": {
+            "evidence": "Turn 4 customer asks 'How is it possible?' and Turn 5 agent responds with a stalling filler instead of answering; Turn 7 does eventually answer. Turn 11 responds to echo complaint with 'I hear you' (unhelpfully literal). Turn 16 says 'Great' after customer says 'Yeah. Tell me' without actually telling them anything. Turn 22 re-addresses connectivity issues after customer said 'Okay' in Turn 20 and was ready to proceed.",
+            "verdict": "partial",
+            "reasoning": "Agent sometimes responds to the customer's actual words but frequently uses stall phrases or off-target responses, particularly at Turns 5, 11, 16, and 22."
+          },
+          "C4": {
+            "evidence": "Agent correctly uses 'Priya' in Turns 21, 31, 41. Agent identifies as 'Alex from DemoCompany' in Turn 1 and Turn 38 when asked. No incorrect name usage observed.",
+            "verdict": "met",
+            "reasoning": "Agent consistently uses the correct borrower name and maintains its own Alex/DemoCompany identity throughout the call."
+          }
+        },
+        "protocol": {
+          "P1": {
+            "evidence": "Turn 1 is the pre-recorded greeting with no amounts. Turn 2 customer responds 'Yes.' Turn 3 agent discloses TOS (fifty thousand) and POS (thirty five thousand) after borrower acknowledges.",
+            "verdict": "met",
+            "reasoning": "Amounts were disclosed only after the borrower confirmed engagement by responding in Turn 2."
+          },
+          "P2": {
+            "evidence": "TOS quoted as 'fifty thousand rupees' in Turns 3, 7, 21 — matches customer data. POS quoted as 'thirty five thousand rupees' in Turns 3, 7, 21, 26, 41 — matches customer data. Settlement amount never mentioned.",
+            "verdict": "met",
+            "reasoning": "All monetary amounts quoted by the agent match the customer data exactly."
+          },
+          "P5": {
+            "evidence": "No threatening or coercive language found across all agent turns. No credit score threats, no legal threats, no harassment observed.",
+            "verdict": "met",
+            "reasoning": "Agent maintained a non-threatening tone throughout the entire call."
+          },
+          "P6": {
+            "evidence": "Turn 9 'Can you hear me clearly now?' — customer just spoke in Turn 8 about the echo, this is a connectivity check not a silence probe. Turn 22 'Can you hear me clearly now?' — after customer said 'Okay' in Turn 20, this is slightly misplaced but driven by ongoing connectivity concern. No 'Hello?' was said by the agent immediately after a clear customer statement.",
+            "verdict": "met",
+            "reasoning": "The agent's connectivity checks were responses to reported audio issues, not misfired silence protocols; the agent did not say 'Hello?' immediately after a clear customer utterance."
+          },
+          "P3": {
+            "evidence": "None found",
+            "verdict": "met",
+            "reasoning": "No literal POS/TOS detected."
+          },
+          "P4": {
+            "evidence": "None found",
+            "verdict": "met",
+            "reasoning": "No forbidden phrases detected."
+          }
+        },
+        "situational_intelligence": {
+          "S1": {
+            "evidence": "Turn 27-32 customer reveals she doesn't currently have the funds but can pay by month end. Turn 36 agent correctly identifies this as a callback/PTP situation. Call disposition is PTP and agent ultimately reaches that outcome.",
+            "verdict": "partial",
+            "reasoning": "Agent eventually correctly reads the situation as a willing payer with a timing constraint, but was slow to identify this due to connectivity distractions and premature phase transitions."
+          },
+          "S2": {
+            "evidence": "Turn 31 agent asks 'What amount would be manageable for you right now, or when do you think you could arrange for the payment?' — adapts to the hardship signal. Turn 36 transitions to callback scheduling when borrower confirms month-end. However, no urgency or credit consequences were pressed, which is appropriate for a willing payer.",
+            "verdict": "met",
+            "reasoning": "Once the willing-payer-with-timing-constraint situation was clear, the agent adapted by moving to callback scheduling rather than applying unnecessary pressure."
+          },
+          "S3": {
+            "evidence": "Turn 27 customer says 'I don't have [funds] with me.' Turn 28-31 agent acknowledges and pivots to asking about timing. Turn 32 customer says 'My month end.' Turn 36 agent schedules callback accordingly.",
+            "verdict": "met",
+            "reasoning": "When borrower revealed she lacked current funds, the agent shifted from pushing for immediate payment to arranging a callback for month-end."
+          },
+          "S4": {
+            "evidence": "schedule_callback function was fired after Turn 25 when customer was mid-sentence ('Is that your...') and had not yet committed to any date. end_call was fired after Turn 28 ('I understand' fragment) but the conversation continued for 13 more turns. The agent correctly recognized the callback situation but the function calls were fired at the wrong moments.",
+            "verdict": "partial",
+            "reasoning": "Agent ultimately reached the right exit (callback scheduled), but the function call timing was seriously misaligned — schedule_callback fired before borrower committed to month-end and end_call fired prematurely while the conversation was still ongoing."
+          }
+        },
+        "flow_transitions": {
+          "F2": {
+            "evidence": "proceed_to_discovery fired after Turn 5 after only one customer response ('Yes'). proceed_to_negotiation fired after Turn 12 because of echo/connectivity issues — the reason logged was 'Echo during call, not able to understand clearly.' No discovery of financial situation, root cause, employment, or willingness was conducted before transitioning to negotiation.",
+            "verdict": "not_met",
+            "reasoning": "Discovery was functionally skipped; the agent transitioned to negotiation phase due to audio quality issues without understanding the borrower's payment situation, employment, or barriers."
+          },
+          "F3": {
+            "evidence": "No dispute language appeared anywhere in the transcript. proceed_to_dispute was never called.",
+            "verdict": "not_applicable",
+            "reasoning": "The borrower never disputed the loan's existence or legitimacy, so dispute routing was correctly not triggered."
+          },
+          "F5": {
+            "evidence": "After proceed_to_negotiation agent does not re-introduce itself. Turn 21 does repeat TOS/POS figures ('fifty thousand rupees... thirty five thousand rupees') which were already stated in Turns 3 and 7. Turn 41 again restates the thirty five thousand rupees closure amount. Agent does not re-introduce name/company except when directly asked in Turn 38.",
+            "verdict": "partial",
+            "reasoning": "Agent avoids re-introducing itself after phase changes, but does re-state the amounts (Turn 21) immediately after the phase transition without new context, which the prompt cautions against."
+          },
+          "F1": {
+            "evidence": "Order: ['discovery', 'negotiation']",
+            "verdict": "met",
+            "reasoning": "Valid phase order."
+          },
+          "F4": {
+            "evidence": "end_call at turn 28, transcript has 41 turns",
+            "verdict": "not_met",
+            "reasoning": "Transcript continued significantly after end_call."
+          },
+          "F6": {
+            "evidence": "Reasonable transition density.",
+            "verdict": "met",
+            "reasoning": "No phase rushing."
+          }
+        },
+        "conversation_quality": {
+          "Q1": {
+            "evidence": "TOS 'fifty thousand' stated in Turns 3, 7, 21. POS 'thirty five thousand' stated in Turns 3, 7, 21, 26, 41 — that is five times. Turn 7 had partial justification (clarifying question), Turn 21 had partial justification (connectivity gap), but Turns 26 and 41 are additional repetitions without significant new context.",
+            "verdict": "partial",
+            "reasoning": "The POS amount is repeated five times across the call; while some repetitions are justified by connectivity issues, the repetition in Turns 26 and 41 goes beyond the two-time threshold without meaningful new context."
+          },
+          "Q2": {
+            "evidence": "All amounts cited (50k TOS, 35k POS) match the system data. No fabricated payment plans, extra discounts, or options beyond what the system permits were mentioned. Settlement amount not mentioned (appropriate — POS was affordable enough).",
+            "verdict": "met",
+            "reasoning": "Agent did not invent any options, amounts, or plans not sanctioned by the system prompt."
+          },
+          "Q3": {
+            "evidence": "No instances found where agent asked the borrower to repeat information already provided. Turn 31 asks about timing which had not yet been disclosed.",
+            "verdict": "met",
+            "reasoning": "Agent did not ask for any information the borrower had already provided in the call."
+          },
+          "Q4": {
+            "evidence": "Turn 7 starts with 'I understand it might seem a bit confusing' before explaining. Turn 28 says 'I understand' (though fragment) before the customer finishes. Turn 31 'I understand, Priya' before asking about timing. Turn 26 directly answers the customer's implicit question about whether outstanding is cleared.",
+            "verdict": "met",
+            "reasoning": "Agent generally acknowledges the customer's statements before pivoting, using 'I understand' as instructed, though Turn 28 cuts the acknowledgment short."
+          },
+          "Q5": {
+            "evidence": "Turn 7 is the longest agent response and runs about three sentences. Turn 21 is two sentences. Turn 41 is the closing summary at about three sentences. Most other turns are one sentence or less.",
+            "verdict": "met",
+            "reasoning": "Agent responses are appropriately concise for a voice call, with no paragraph-length monologues observed."
+          }
+        },
+        "empathy": {
+          "E1": {
+            "evidence": "Turn 27-29 customer reveals lack of funds. Turn 28 agent says 'I understand' (fragment). Turn 31 'I understand, Priya. What amount would be manageable...' — acknowledges before pivoting. No extended empathy or validating statement about the difficulty of the situation.",
+            "verdict": "partial",
+            "reasoning": "Agent does use 'I understand' as instructed but does not provide any substantive empathetic acknowledgment of the borrower's financial difficulty before moving to the next question."
+          },
+          "E2": {
+            "evidence": "No credit score threats, no NPA warnings, no escalation threats were made during the call. Agent did not press urgency aggressively despite borrower's hardship signal.",
+            "verdict": "met",
+            "reasoning": "Agent appropriately avoided aggressive urgency tactics and credit threats given the borrower was cooperative and expressing financial difficulty."
+          },
+          "E3": {
+            "evidence": "Turn 25 customer says 'Is that your' mid-sentence and Turn 26 agent responds as if customer had finished. Turn 27-29 customer's statement is fragmented across turns ('you please share more details...Because I don't...With me.') and agent responds with a fragment 'I understand' in Turn 28 before the customer finishes in Turn 29-30.",
+            "verdict": "partial",
+            "reasoning": "Agent interrupted or responded before the borrower finished speaking on at least two occasions (Turns 25-26 and Turns 27-30), not fully giving the borrower space to complete their thoughts."
+          },
+          "E4": {
+            "evidence": "Borrower was not hostile. Agent remained calm and professional through connectivity frustrations throughout the call. No escalation or unprofessional language from agent.",
+            "verdict": "met",
+            "reasoning": "Agent maintained professional and respectful tone throughout, even when connectivity issues caused repeated confusion."
+          }
+        },
+        "outcome": {
+          "O1": {
+            "evidence": "Turn 32 customer commits to month-end payment. Turn 36 agent confirms callback for end of month. Turn 41 agent confirms callback with figures for thirty five thousand rupees closure. A specific next step (callback at end of month, 35k PTP) is established.",
+            "verdict": "met",
+            "reasoning": "The call ends with a clear next step: callback scheduled at month-end with the 35k closure amount confirmed and ready."
+          },
+          "O2": {
+            "evidence": "end_call fired after Turn 28 with reason 'resolved_callback_scheduled'. At Turn 28, no callback had actually been scheduled yet — the customer had not yet stated month-end (Turn 32) and schedule_callback had been fired prematurely (after Turn 25) before commitment. The reason 'resolved_callback_scheduled' is ultimately correct for the call outcome but was logged at the wrong moment.",
+            "verdict": "partial",
+            "reasoning": "The end_call reason 'resolved_callback_scheduled' accurately reflects the final call outcome, but the function was fired prematurely at Turn 28 before the borrower had actually committed to a callback date, making the timing incorrect even if the reason label is ultimately appropriate."
+          },
+          "O3": {
+            "evidence": "Turn 39 customer thanks the agent and says they'll connect next week. Turn 41 agent closes warmly with confirmed figures. Borrower appears cooperative and clear on the 35k closure offer and callback plan. No confusion introduced or trust damaged.",
+            "verdict": "met",
+            "reasoning": "The borrower ends the call in a cooperative, clear state with a defined plan, no worse off than at the start and arguably better informed about her options."
+          }
+        }
+      },
+      "worst_messages": [
+        {
+          "turn_index": 5,
+          "agent_message": "Okay, give me just a moment...",
+          "issue": "The customer asked a direct, genuine question — 'How is it possible?' — about the discounted closure offer. This was the perfect opening to explain the value proposition (charge removal, savings). Instead, the agent stalled with a filler phrase, leaving the question unanswered. The explanation was eventually delivered in Turn 7, but only after wasting a turn and losing momentum right when the customer showed curiosity and engagement.",
+          "category": "ignoring_input",
+          "should_have_done": "Immediately explain: 'We work directly with DemoLender and they've authorized us to remove the extra charges — interest penalties and late fees — so instead of fifty thousand, you only need to pay thirty five thousand to close it completely.' This would have reinforced the value proposition while the customer was receptive.",
+          "impact": "The unanswered question forced a repeat explanation in Turn 7 and signalled to the customer that the agent was either unprepared or stalling, undermining early trust. It also contributed to the customer's connectivity frustration being conflated with dissatisfaction."
+        },
+        {
+          "turn_index": 18,
+          "agent_message": "Let me pull up your account details...",
+          "issue": "The agent already has all account details loaded in the system. Saying 'let me pull up your account details' is a fabricated stall — there is nothing to pull up. The customer had just asked 'Can you please explain it?' which is a simple, direct request. This phrase made the agent appear disorganised or unprepared, directly causing the customer to say 'Hello?' again (Turn 19) out of confusion, and extending the connectivity-problem loop unnecessarily.",
+          "category": "fabrication",
+          "should_have_done": "Answer immediately: 'Of course — you owe fifty thousand total, but we're offering to close it at thirty five thousand by removing all the additional charges. Once you pay that, the loan is marked closed on your credit report.' No stalling needed.",
+          "impact": "Triggered another 'Hello?' from the customer (Turn 19), further disrupting call flow. It reinforced the impression that the agent was not in control of the account, which hurt credibility precisely at the moment the customer was asking for more information to build confidence."
+        },
+        {
+          "turn_index": 28,
+          "agent_message": "I understand",
+          "issue": "The customer was mid-sentence — 'I don't I mean, currently, I don't have thirty five thousand...' — and the agent truncated the response to 'I understand' while simultaneously triggering end_call with reason 'resolved_callback_scheduled'. No callback had been confirmed yet; no date, amount, or commitment had been established. The customer had not finished speaking and had not agreed to a PTP. Calling end_call here was a severe protocol violation that could have abruptly terminated the call before any resolution was reached.",
+          "category": "protocol_violation",
+          "should_have_done": "Let the customer finish. Then respond with: 'I understand — when do you think you could arrange thirty five thousand rupees? Even by month-end works.' The schedule_callback and end_call functions should only have been triggered AFTER a specific date and amount were confirmed, which happened only at Turn 32–36.",
+          "impact": "The premature end_call risked abruptly disconnecting the customer before a PTP was secured. The call continued only because the system did not immediately terminate, but the agent's next two responses (Turns 31 onwards) had to rebuild the thread. The final closing (Turn 41) also lacked confirmation of the payment amount, in part because the premature close disrupted the negotiation sequence."
+        }
+      ],
+      "deterministic_checks": {
+        "F1_phase_order": {
+          "passed": true,
+          "phases": [
+            "discovery",
+            "negotiation"
+          ]
+        },
+        "F4_zombie_call": {
+          "passed": false,
+          "end_call_turn": 28,
+          "total_turns": 41
+        },
+        "F6_phase_rushing": {
+          "passed": true,
+          "transition_count": 3,
+          "total_turns": 41
+        },
+        "P3_literal_terms": {
+          "passed": true,
+          "turns": []
+        },
+        "P4_forbidden_phrases": {
+          "passed": true,
+          "hits": []
+        }
+      }
+    }
+  ]
+}

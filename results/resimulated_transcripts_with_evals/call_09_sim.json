@@ -1,0 +1,131 @@
+{
+  "call_id": "call_09",
+  "customer": {
+    "name": "Kavita Menon",
+    "pending_amount": "fifty thousand",
+    "closure_amount": "",
+    "settlement_amount": "",
+    "dpd": "180"
+  },
+  "disposition": "INQUIRY",
+  "phases_visited": [
+    "opening",
+    "callback_opening",
+    "negotiation"
+  ],
+  "total_turns": 25,
+  "transcript": [
+    {
+      "speaker": "agent",
+      "text": "Hello, this is Alex from DemoCompany, calling about your DemoLender loan. We reviewed your account and have a good offer to help close it. Can we talk for a moment?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Yeah. Saturday evening also, you will call. Right?"
+    },
+    {
+      "speaker": "agent",
+      "text": "I understand, Kavita — I'll keep this brief. Your account with DemoLender shows 50,000 rupees pending, and I'm working with the team to get you the best closure offe"
+    },
+    {
+      "speaker": "customer",
+      "text": "Hello? Yeah. Yeah. Yeah. Okay. Yeah. That's that's what I know. But what offer you will offer then? How much rupees I will pay the finance?"
+    },
+    {
+      "speaker": "agent",
+      "text": "Great question, Kavita. Your total outstanding is 50,000 rupees, but I need to check with the team to get you the exact closure offer with charges removed. Can I call you back with the confirmed figures — maybe later today or tomorrow?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Okay. Hello? I I need a settlement. You'll need you'll be giving me the best price."
+    },
+    {
+      "speaker": "agent",
+      "text": "Absolutely, Kavita, I hear you — you want the best possible deal, and I want to get you that. Let me check with the team and call you back with the lowest figure we can offer. What time works best for you tomorrow?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Actually, total, my outstanding was $XX,XXX.40 only. The four EMI is only pending in our side. Okay?"
+    },
+    {
+      "speaker": "agent",
+      "text": "I understand, Kavita. I'll verify the exact figures on our end and make sure we have the right amount before calling you back. What time tomorrow works best for you?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Yeah."
+    },
+    {
+      "speaker": "agent",
+      "text": "What time tomorrow works for you — morning or afternoon?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Yeah. So our her voice is breaking. Sometimes only we cannot hear"
+    },
+    {
+      "speaker": "agent",
+      "text": "I understand, Kavita. Let's not waste your time on a bad connection. Can you just tell me — morning or afternoon tomorrow for the callback?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Okay. Actually, four EMI is pending. My side."
+    },
+    {
+      "speaker": "agent",
+      "text": "Got it, Kavita. I'll note that and have the exact figures ready when I call back. Morning or afternoon tomorrow?"
+    },
+    {
+      "speaker": "customer",
+      "text": "9787 is my EMI amount. Enter $4XX,XXX 48 rupees. It's a my outstanding payment. For EMI only, I have not paid."
+    },
+    {
+      "speaker": "agent",
+      "text": "I understand, Kavita — I've noted that. I'll verify the exact figures with the team and make sure we have everything right before I call you back. What time tomorrow works for you — morning or afternoon?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Yeah. That can mean it doesn't operate. If that platform is continuously added for some late payments, figures on the bounce or just something. But already, that platform is that I'm facing the issue. Although AWS is not issue. So only I will get the the direct link and I will make the all payments."
+    },
+    {
+      "speaker": "agent",
+      "text": "Understood, Kavita. I'll get you a direct payment link along with the confirmed figures when I call back. What time tomorrow works — morning or afternoon?"
+    },
+    {
+      "speaker": "customer",
+      "text": "That time. I need a settlement for"
+    },
+    {
+      "speaker": "agent",
+      "text": "I hear you, Kavita — you want a settlement, and I will check what the best offer is for your account. Just tell me, morning or afternoon tomorrow, and I'll call you back with the figures."
+    },
+    {
+      "speaker": "customer",
+      "text": "the this amount in the $XX,XXX.48 fees. I will need the best price of discounts."
+    },
+    {
+      "speaker": "agent",
+      "text": "Kavita, I've noted everything — you want the best settlement figure on your outstanding amount. I'll have that ready when I call back. Shall I call you tomorrow morning, around 10 AM?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Okay. Okay. Actually, you know, I just very not clear the"
+    },
+    {
+      "speaker": "agent",
+      "text": "No worries, Kavita. I'll call you tomorrow at 10 AM with the best settlement figure for your account. Take care."
+    }
+  ],
+  "function_calls": [
+    {
+      "turn": 12,
+      "function": "schedule_callback",
+      "params": "preferred_time=\"tomorrow 10 AM\", callback_type=\"wants_payment_amount\", reason=\"Customer requesting settlement offer, wants best discount on outstanding amount\""
+    },
+    {
+      "turn": 12,
+      "function": "end_call",
+      "params": "reason=\"callback_scheduled\""
+    }
+  ]
+}

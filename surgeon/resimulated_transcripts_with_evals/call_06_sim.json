@@ -1,0 +1,89 @@
+{
+  "call_id": "call_06",
+  "customer": {
+    "name": "Arjun Nair",
+    "pending_amount": "fifty thousand",
+    "closure_amount": "zero",
+    "settlement_amount": "",
+    "dpd": "180"
+  },
+  "disposition": "DISPUTE",
+  "phases_visited": [
+    "opening",
+    "discovery",
+    "dispute",
+    "negotiation"
+  ],
+  "total_turns": 17,
+  "transcript": [
+    {
+      "speaker": "agent",
+      "text": "Hello, this is Alex from DemoCompany, calling about your DemoLender loan. We reviewed your account and have a good offer to help close it. Can we talk for a moment?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Hire."
+    },
+    {
+      "speaker": "agent",
+      "text": "Am I speaking with Arjun Nair?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Bullish. Hello? We have disconnected with the institution. We are not we are not happy with the services they have done."
+    },
+    {
+      "speaker": "agent",
+      "text": "I understand. Before we go further, can I confirm I am speaking with Arjun Nair?"
+    },
+    {
+      "speaker": "customer",
+      "text": "So yeah, admission captured. Admissions were canceled, and we have took an admission in some other institution."
+    },
+    {
+      "speaker": "agent",
+      "text": "I understand. Just to confirm before we proceed — am I speaking with Arjun Nair?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Yes. And I told clearly we paid the already amount and"
+    },
+    {
+      "speaker": "agent",
+      "text": "I understand, Arjun. You're saying the amount has already been paid. Can you tell me when you made the payment and roughly how much it was?"
+    },
+    {
+      "speaker": "customer",
+      "text": "rest of the balance amount to be canceled."
+    },
+    {
+      "speaker": "agent",
+      "text": "Got it. How much did you pay, and do you have a reference number or UTR from that payment?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Okay. So that's what I clearly told them. I gave a notice also."
+    },
+    {
+      "speaker": "agent",
+      "text": "I understand, Arjun. To help resolve this, I need the UTR or reference number from your payment. Do you have that handy?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Yes. No. Why why do I have to pay? They disconnected with the institution."
+    },
+    {
+      "speaker": "agent",
+      "text": "I understand, Arjun. You're saying the institute stopped services, and you feel the remaining amount should not be yours to pay. I hear you. Do you have any proof of the payment you already made — a UTR number or bank receipt?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Yeah. You can please share a message. I will try to"
+    },
+    {
+      "speaker": "agent",
+      "text": "Sure, you can send your payment proof to support@demolender.com. Once you do that, our verification team will review it and follow up with you."
+    }
+  ],
+  "function_calls": []
+}

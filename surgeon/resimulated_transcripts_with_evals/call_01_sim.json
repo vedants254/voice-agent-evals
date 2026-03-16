@@ -1,0 +1,158 @@
+{
+  "call_id": "call_01",
+  "customer": {
+    "name": "Priya Sharma",
+    "pending_amount": "fifty thousand",
+    "closure_amount": "thirty five thousand",
+    "settlement_amount": "twenty five thousand",
+    "dpd": "180"
+  },
+  "disposition": "PTP",
+  "phases_visited": [
+    "opening",
+    "discovery",
+    "negotiation",
+    "closing"
+  ],
+  "total_turns": 29,
+  "transcript": [
+    {
+      "speaker": "agent",
+      "text": "Hello, this is Alex from DemoCompany, calling about your DemoLender loan. We reviewed your account and have a good offer to help close it. Can we talk for a moment?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Yes."
+    },
+    {
+      "speaker": "agent",
+      "text": "Priya, your total outstanding is 50000 rupees. But we can remove all the extra charges and close your loan at just 35000 rupees — that's a saving of 15000 rupees right now."
+    },
+    {
+      "speaker": "customer",
+      "text": "Yes. Sorry. How how is it possible?"
+    },
+    {
+      "speaker": "agent",
+      "text": "We work directly with DemoLender, so we can waive the additional charges and penalties on your account. The 35000 rupees covers just the principal — no extra fees on top. Can I ask, Priya — what's been making it difficult to keep up with the payments so far?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Okay."
+    },
+    {
+      "speaker": "agent",
+      "text": "Has it been more of a job situation, or just a lot of expenses piling up lately?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Okay. I can hear from echo. I'm not able to hear your voice properly."
+    },
+    {
+      "speaker": "agent",
+      "text": "I'm sorry about that, Priya. Can you hear me any better now?"
+    },
+    {
+      "speaker": "customer",
+      "text": "I can hear you. But it's like an echo."
+    },
+    {
+      "speaker": "agent",
+      "text": "I understand, I'm sorry about that. Let's keep going — has the payment difficulty been job-related or more of an expenses issue?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Voice is not clear."
+    },
+    {
+      "speaker": "agent",
+      "text": "I'm sorry about the connection, Priya. Let me schedule a callback so we can speak clearly. What time works best for you?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Hello? Yeah. Tell me."
+    },
+    {
+      "speaker": "agent",
+      "text": "Great, glad the line is better now. Has the difficulty with payments been more of a job situation, or expenses piling up?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Can you please explain it?"
+    },
+    {
+      "speaker": "agent",
+      "text": "Sure — your loan with DemoLender has been overdue, and I'm trying to understand what's been making it hard to pay, so I can find the best solution for you. Is it a job issue, or something else going on?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Hello? Okay."
+    },
+    {
+      "speaker": "agent",
+      "text": "Priya, can you hear me clearly right now? Just say yes or no."
+    },
+    {
+      "speaker": "customer",
+      "text": "Yes. Okay. Yeah. Yeah. I can hear you. If I pay XX,XXX means that outstanding will be removed."
+    },
+    {
+      "speaker": "agent",
+      "text": "Yes, exactly. If you pay 35000 rupees, your loan is fully closed — no more outstanding, no more calls, and it shows as closed on your credit report."
+    },
+    {
+      "speaker": "customer",
+      "text": "Is that your"
+    },
+    {
+      "speaker": "agent",
+      "text": "Sorry, Priya, you got cut off — is that my what?"
+    },
+    {
+      "speaker": "customer",
+      "text": "you please share more details about it? Because I don't I mean, currently, I don't have XX,XXX."
+    },
+    {
+      "speaker": "agent",
+      "text": "I understand, Priya. When do you think you could arrange something — is it a matter of a few weeks, or is the situation more long-term right now?"
+    },
+    {
+      "speaker": "customer",
+      "text": "With me. But I will check and get back to you later."
+    },
+    {
+      "speaker": "agent",
+      "text": "I understand. But just so you know, this 35000 rupees closure offer won't stay open indefinitely — the sooner you act, the better. When exactly should I call you back?"
+    },
+    {
+      "speaker": "customer",
+      "text": "My month end."
+    },
+    {
+      "speaker": "agent",
+      "text": "Got it, Priya. I'll call you back at month end. Please do keep in mind that the 35000 rupees closure offer may change if we wait too long — so try to have the funds ready by then. Take care, Priya, and we'll speak at month end. Have a good day. Thank you, Priya. Goodbye."
+    }
+  ],
+  "function_calls": [
+    {
+      "turn": 2,
+      "function": "proceed_to_discovery",
+      "params": ""
+    },
+    {
+      "turn": 14,
+      "function": "schedule_callback",
+      "params": "preferred_time=\"month end\", callback_type=\"normal\", reason=\"customer needs time to arrange funds\""
+    },
+    {
+      "turn": 14,
+      "function": "proceed_to_closing",
+      "params": "resolution_type=\"resolved_callback_scheduled\""
+    },
+    {
+      "turn": 14,
+      "function": "end_call",
+      "params": "reason=\"resolved_callback_scheduled\""
+    }
+  ] 
+}

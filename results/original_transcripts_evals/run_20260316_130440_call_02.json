@@ -1,0 +1,212 @@
+{
+  "timestamp": "20260316_130440",
+  "calls_evaluated": [
+    "call_02"
+  ],
+  "summary": {
+    "call_02": {
+      "score": 37.6,
+      "verdict": "bad"
+    }
+  },
+  "results": [
+    {
+      "call_id": "call_02",
+      "customer_name": "Rahul Verma",
+      "disposition": "BLANK_CALL",
+      "score": 37.6,
+      "verdict": "bad",
+      "dimension_scores": {
+        "communication": 0.3,
+        "protocol": 0.15,
+        "situational_intelligence": 0.45,
+        "flow_transitions": 0.65,
+        "conversation_quality": 0.24,
+        "empathy": 0.4,
+        "outcome": 0.4
+      },
+      "dimension_details": {
+        "communication": {
+          "C1": {
+            "evidence": "Turn 5: 'Theek नमस्ते, hai, main aapke आपके saath अट्ठाईस Hindi mein baat हज़ार karta hoon. पाँच' — completely garbled. Turn 7: 'सौ बयासी रुपये बकाया हैं।' — orphaned fragment. Turn 13: 'नमस्ते, मैं अभिषेक बात कर' — cut off mid-sentence. Turn 15: 'नमस्ते मैम, मैं अभिषेक बोल रहा हूँ रिवरलाइन से। हम प्रोपेलिड के साथ शिक्षा' — cut off. Turns 28, 30, 42, 50, 54, 59, 62, 106 are all single words or fragments. Turn 9: 'Okay, give me just a moment...' is pure filler.",
+            "verdict": "not_met",
+            "reasoning": "Multiple turns (5, 7, 13, 15, 28, 30, 42, 50, 54, 59, 62, 106) are either garbled, fragmented mid-sentence, or zero-information filler. A listener on voice would be deeply confused by at least a dozen of these turns."
+          },
+          "C2": {
+            "evidence": "Customer requests Hindi explicitly at Turns 37-38, 41, 43-44. Agent switches back to English at Turn 36 (long monologue) after having already been in Hindi. Agent apologises at Turn 40 and mostly stays in Hindi afterwards. However, Turn 36 is a full English monologue mid-call despite prior Hindi context. Turn 135 partially reverts.",
+            "verdict": "partial",
+            "reasoning": "The agent failed the language compliance requirement once significantly (Turn 36 English monologue after sustained Hindi interaction) but did acknowledge the complaint and largely comply afterwards; the underlying pattern of slipping into English despite explicit customer objections is a meaningful gap."
+          },
+          "C3": {
+            "evidence": "Turn 4: customer says 'Please amount repeat' — agent responds with garbled mix (Turn 5) rather than a clean restatement. Turn 34: customer says she can provide documents; agent asks for them — on topic. Turn 36: customer asks for a number/contact to send documents; agent launches into a credit-score lecture instead of answering the question. Turn 115: customer asks to send on 'this number'; agent correctly explains limitation. Turn 125: 'हेलो?' after customer's complete statement in Turn 124.",
+            "verdict": "partial",
+            "reasoning": "Most turns are broadly responsive, but there are two clear failures: (1) Turn 36 ignores the customer's document-number request to deliver a scripted credit lecture, and (2) Turn 5 garbles a simple amount-repeat request. These noticeably disrupted the conversation."
+          },
+          "C4": {
+            "evidence": "Turn 1: agent is 'Alex from DemoCompany'. Turn 13: 'मैं अभिषेक बात कर' — wrong name. Turn 15: 'मैं अभिषेक बोल रहा हूँ रिवरलाइन से' — wrong name AND wrong company ('Riverline'). Turn 112: agent addresses customer as 'अर्चना जी' — name never provided by customer (customer is the borrower's widow, name unknown). Turn 135: 'सपोर्ट एट प्रॉपरल डॉट कॉम' — wrong company name ('Properl' instead of DemoLender).",
+            "verdict": "not_met",
+            "reasoning": "The agent introduces itself as 'Abhishek from Riverline' in Turns 13/15 (overriding Alex/DemoCompany), invents the customer's name 'Archana' in Turn 112, and mis-names the lender multiple times. These are significant, concrete identity failures."
+          }
+        },
+        "protocol": {
+          "P1": {
+            "evidence": "Turn 2: customer says 'Yes?' — that is a response, not identity confirmation. Turn 3: agent immediately states 'you have fifty thousand rupees pending.' No identity verification was attempted before disclosing the amount. The system prompt states amounts must only be disclosed after identity is confirmed.",
+            "verdict": "not_met",
+            "reasoning": "The borrower's identity was never verified (only a 'Yes?' was received) before the agent disclosed the specific outstanding amount in Turn 3. This is a clear identity-first disclosure failure."
+          },
+          "P2": {
+            "evidence": "Customer data: TOS = fifty thousand; POS = zero; settlement = blank. Turn 3: 'fifty thousand rupees' — correct TOS. Turn 10: 'thirty-five thousand five hundred and eighty-eight rupees' — does NOT match any system data. Turn 17, 66: same 35,588 figure repeated — fabricated. Turn 36 and 114: '668 days past due' / 'छह सौ अड़सठ दिनों' — DPD in data is 180, not 668. Turn 135: company named 'Properl' not 'DemoLender'.",
+            "verdict": "not_met",
+            "reasoning": "The agent repeatedly quotes 35,588 rupees (not in any data field) and states DPD as 668 days when the system shows 180. Both are significant factual errors that could materially mislead the customer about her actual liability."
+          },
+          "P3": {
+            "evidence": "Turn 36: 'at six hundred and sixty-eight days past due, every month adds another negative entry to the credit report... Resolving the payment does not mean giving up the dispute. You can still pursue it separately.' Turn 114: similar credit-impact language used in dispute context. No direct threats of legal action or wage garnishment.",
+            "verdict": "partial",
+            "reasoning": "The agent did not threaten legal action or property seizure, but applying credit-score pressure during an active dispute (Turns 36, 114) when the borrower is a bereaved widow with no income is coercive and inappropriate to the context; it doesn't cross into hard threats but is a calibration failure."
+          },
+          "P4": {
+            "evidence": "Turn 68: 'हेलो?' after Turn 67 where customer said 'जी हां' (complete affirmative). Turn 125: 'हेलो?' after Turn 124 where customer clearly said 'मैं mail नहीं कर पाऊंगी' (complete statement). Turn 151: 'हेलो?' after Turn 150 where customer specified '01:15 तक करवा दीजिए' (specific callback time). Turn 136: 'हेलो?' in the middle of a connectivity pause — this one is more justifiable.",
+            "verdict": "not_met",
+            "reasoning": "The agent said 'Hello?' three times (Turns 68, 125, 151) immediately after the customer had just delivered a complete, audible statement. This signals the agent lost track of the conversation rather than any genuine connectivity issue."
+          }
+        },
+        "situational_intelligence": {
+          "S1": {
+            "evidence": "Turn 14: 'मैंने कोई loan नहीं लिया था' — explicit dispute. Turns 18-22: customer clarifies loan was in her name but husband paid; Turn 27: husband died on 07/03/2025. Turns 63-108: customer asks for loan to be closed, claims it was fully paid. Call disposition: BLANK_CALL. Phases visited: opening, discovery, dispute.",
+            "verdict": "partial",
+            "reasoning": "The agent correctly identified a dispute signal and triggered proceed_to_dispute, but failed to fully classify the compound situation: bereaved widow, claimed prior payment (not just 'never took the loan'), and language-barrier element all required different handling. The agent continued applying standard collection pressure (credit score) rather than pivoting to a pure dispute-and-verification mode."
+          },
+          "S2": {
+            "evidence": "After dispute routing (Turn 21), system prompt requires NOT pushing payment. Turn 36: agent pushes credit-score pressure ('every month adds another negative entry'). Turn 66: agent restates the outstanding amount. Turn 114: agent again raises credit impact during dispute. Turn 118: agent redirects to callback — appropriate. Turn 133: empathy + document submission — appropriate.",
+            "verdict": "partial",
+            "reasoning": "The agent correctly routed to dispute and eventually sought document submission and callback, but continued applying collection-pressure language (credit score, urgency) that the system prompt explicitly forbids in dispute handling, significantly degrading the strategy appropriateness."
+          },
+          "S3": {
+            "evidence": "Turn 27: customer reveals husband's death. Turn 30: agent begins acknowledgment ('मुझे यह सुनकर बहुत अफ़सोस'). Turn 32: asks for death certificate — appropriate pivot toward documentation. Turn 36: immediately launches into a 100+ word English credit-score lecture — completely undoing the empathetic pivot. Turn 114: again pivots to credit pressure mid-dispute acknowledgment.",
+            "verdict": "partial",
+            "reasoning": "The agent acknowledged the bereavement within 1-2 turns (Turns 30, 32) but then immediately returned to collection pressure in Turn 36 and again in Turn 114. The acknowledgment was cosmetic; the strategy did not meaningfully shift to pure dispute-and-bereavement handling."
+          },
+          "S4": {
+            "evidence": "Customer's clear callback signal came at Turns 141-142. schedule_callback function was actually called after Turn 82 — roughly 60 turns before the customer confirmed 1:15 PM. The agent looped on email vs WhatsApp for approximately 20 turns (Turns 115–141) without resolving the document submission channel. No end_call was ever triggered despite the call clearly ending at Turn 154.",
+            "verdict": "not_met",
+            "reasoning": "The schedule_callback was fired prematurely (after Turn 82) before the borrower had confirmed any time, and no end_call was triggered at all. The agent also looped excessively on the document channel question without reaching resolution, delaying a clean exit significantly."
+          }
+        },
+        "flow_transitions": {
+          "F1": {
+            "evidence": "Opening phase (Turns 1-6), proceed_to_discovery called after Turn 6, proceed_to_dispute called after Turn 21. Phases visited per metadata: opening → discovery → dispute. No negotiation or closing phases entered.",
+            "verdict": "met",
+            "reasoning": "The call correctly branched from opening to discovery and then to dispute when an explicit dispute was raised. The linear progression opening → discovery → dispute is the correct path for this call type."
+          },
+          "F2": {
+            "evidence": "proceed_to_discovery called after Turn 6 (customer's single 'हां बोलिए'). The only 'discovery' exchange before the dispute trigger was Turn 3 (amount disclosure) and Turn 6 (customer's 'go ahead'). No substantive discovery questions about employment, financial situation, or ability to pay were asked before the dispute branch was taken.",
+            "verdict": "partial",
+            "reasoning": "Discovery was essentially bypassed — the agent moved from opening to discovery phase after a single acknowledgment without gathering any information about why the borrower hasn't paid; however, the customer immediately raised a dispute at Turn 14, making extended discovery practically impossible."
+          },
+          "F3": {
+            "evidence": "Turn 14: 'मैंने कोई loan नहीं लिया था' — this is textbook explicit dispute language ('I never took this loan'). proceed_to_dispute was called after Turn 21 (agent's 'जी।' after Turns 18-22 clarification). The trigger was accurate; the 2-3 turn delay after Turn 14 was reasonable to let the customer elaborate.",
+            "verdict": "met",
+            "reasoning": "The dispute trigger was accurate — the customer explicitly said 'I never took this loan' in Turn 14, which perfectly matches the system prompt's dispute criteria. The proceed_to_dispute call after Turn 21 correctly acted on this signal."
+          },
+          "F4": {
+            "evidence": "schedule_callback was called after Turn 82. The call continued for approximately 70 more turns (Turns 83-154). No end_call was ever triggered — the call simply faded out at Turn 154 with customer saying 'Ok ok.'",
+            "verdict": "not_met",
+            "reasoning": "No end_call was ever fired during the entire call, which is a significant omission. The schedule_callback was triggered prematurely (Turn 82) before the callback time was confirmed, and the conversation continued for 70+ more turns without a proper close."
+          }
+        },
+        "conversation_quality": {
+          "Q1": {
+            "evidence": "35,588 rupees figure stated in Turns 10, 17, 66 — three times, no new context or customer request to repeat. Credit score / DPD pressure repeated in Turns 36 and 114 almost verbatim. 'मैं समझ गया' / 'ठीक है' repeated as filler across dozens of turns.",
+            "verdict": "not_met",
+            "reasoning": "The same fabricated amount (35,588) and the same credit-impact lecture were delivered multiple times without new context. The conversation has a clear 'stuck-in-a-loop' quality with repetitive acknowledgment fillers across 30+ turns."
+          },
+          "Q2": {
+            "evidence": "Turn 64: 'मैं आपकी इस बात की पूरी तरह से जांच करवाऊँगा' — promises a formal investigation. Turn 82: promises to check husband's payment account details. Turn 89: promises to investigate payment history. Turn 93: again promises payment details check. Turn 126: 'मैं एक बार फिर से प्रॉपरल टीम से पूछूंगा' — promises to ask Properl team about WhatsApp. Turns 13/15: agent fabricates identity as 'Abhishek from Riverline'.",
+            "verdict": "not_met",
+            "reasoning": "The agent made multiple promises about capabilities not in the system prompt: investigating prior payments, checking husband's account, exploring WhatsApp submission channels. These are fabricated commitments. Additionally, presenting as 'Abhishek from Riverline' is outright identity fabrication."
+          },
+          "Q3": {
+            "evidence": "Turn 147: 'क्या दोपहर में किसी विशिष्ट समय पर आप उपलब्ध रहेंगी?' — customer had already said 'अभी' (now/soon) at Turns 143-148. Turn 84: 'आप अभी दो सौ रुपये का भुगतान कर सकती हैं?' — customer had just said this in Turn 75 and then herself questioned it in Turn 86.",
+            "verdict": "partial",
+            "reasoning": "The agent re-asked for callback timing (Turn 147) moments after the customer indicated 'now' (Turns 143-148), and echoed back the 200-rupee claim (Turn 84) in a way that confused rather than confirmed. These are redundant re-asks that noticeably stalled the conversation."
+          },
+          "Q4": {
+            "evidence": "Turn 36: customer asks for a document-submission number; agent immediately launches into a full English credit-score monologue without acknowledging the request. Turn 114: similarly, after sustained document discussion, agent pivots to credit impact without addressing customer's actual needs. Turns 28, 30, 42, 50, 54, 62 show agent cutting in before customer finishes.",
+            "verdict": "partial",
+            "reasoning": "In most turns the agent offers a surface acknowledgment ('जी', 'ठीक है') before pivoting, but Turns 36 and 114 show the agent completely steamrolling the customer's actual request to deliver scripted content. The acknowledgments are largely formulaic filler rather than genuine engagement."
+          },
+          "Q5": {
+            "evidence": "Turn 36: ~80 word English monologue covering credit score, NPA, dispute, and payment simultaneously. Turn 64: ~70 word Hindi explanation. Turn 72: multi-clause investigation promise. Turn 89: multi-step promise covering three separate actions. Turn 114: ~100 word Hindi monologue covering investigation + credit DPD + email ID + callback offer.",
+            "verdict": "not_met",
+            "reasoning": "Turns 36, 64, 72, 89, and 114 all significantly exceed 50 words and dump multiple information categories simultaneously. These are voice-call monologues that a listener cannot absorb, especially one who is not fluent in English."
+          }
+        },
+        "empathy": {
+          "E1": {
+            "evidence": "Turn 27: customer reveals husband died 07/03/2025. Turn 30: 'मुझे यह सुनकर बहुत अफ़सोस' — acknowledgment begins but is cut off. Turn 32: 'मुझे यह सुनकर बहुत अफ़सोस है' — complete condolence, then immediately asks for death certificate documents. Turn 36: launches into credit-score pressure — immediate pivot away from empathy. Turn 133: 'मुझे बहुत अफ़सोस है यह सुनकर' — repeated condolence at Turn 133. Turn 104-105: customer says she's a housewife with no income; agent response at Turn 106 is just 'मैं समझ' (fragment).",
+            "verdict": "partial",
+            "reasoning": "The agent expressed condolences at Turns 30, 32, and 133, which is specific acknowledgment. However, the Turn 36 credit-score lecture immediately after the bereavement disclosure, and the fragmentary response to the housewife/no-income disclosure, significantly undermine the empathetic framing."
+          },
+          "E2": {
+            "evidence": "DPD is 180 (system data) but agent states 668. Customer is in dispute — system prompt says do NOT push payment in dispute. Customer is a bereaved housewife with zero income (Turns 104-105). Turn 36: full credit-impact/NPA pressure delivered mid-dispute. Turn 114: credit-score pressure repeated after extensive bereavement discussion. Turn 66: restates outstanding amount during active dispute.",
+            "verdict": "not_met",
+            "reasoning": "The agent applies credit-score and NPA pressure (Turns 36, 114) to a bereaved widow in an active dispute who has explicitly stated she has no income. This is pressure escalation in exactly the circumstances where it is most inappropriate and where the system prompt mandates a different strategy."
+          },
+          "E3": {
+            "evidence": "Turns 20, 26, 29, 46, 48, 51, 53, 55, 57, 73, 77-78, 91, 94, 107-108: customer is cut off mid-sentence and agent fires a short filler ('जी,' 'ठीक') — repeatedly. schedule_callback function was called after Turn 82 while the customer was still actively sharing information (Turns 83-154 continued). Turn 28: agent starts 'मैं आपके' while customer is still speaking.",
+            "verdict": "not_met",
+            "reasoning": "The agent consistently interrupts or fires filler responses before the customer finishes their thought, evidenced by the customer needing to continue their sentence in the very next turn across 15+ instances. The premature schedule_callback (Turn 82) was triggered while the customer was still mid-conversation."
+          },
+          "E4": {
+            "evidence": "Turns 37-44: customer repeatedly and frustratedly complains about English use; agent responds with apology (Turn 40, 45) and does not match frustration. Throughout the call the agent maintains a respectful, patient tone. No sarcasm, aggression, or condescension detected.",
+            "verdict": "met",
+            "reasoning": "Despite the customer's repeated complaints about language switching, the agent responded with apologies and course corrections rather than defensiveness or frustration. Professional tone was maintained throughout."
+          }
+        },
+        "outcome": {
+          "O1": {
+            "evidence": "Turn 152: agent says callback scheduled for 1:15 PM. Turn 154: customer says 'Ok ok.' No specific action confirmed: (a) document submission pathway unresolved (customer cannot email, WhatsApp not provided); (b) no end_call was ever triggered; (c) no specific commitment about what happens at callback (investigation? closure?). Callback is the only concrete output.",
+            "verdict": "partial",
+            "reasoning": "A callback time (1:15 PM) was loosely confirmed, which counts as a specific next step. However, the critical action item — how the customer submits her death certificate and payment proof — remained unresolved since the customer cannot email and no WhatsApp number was provided. The outcome is actionable only in part."
+          },
+          "O2": {
+            "evidence": "schedule_callback called after Turn 82 with preferred_time 'आज 1:15 बजे' — but the customer only specified 1:15 PM at Turn 150, nearly 70 turns later. No end_call was triggered at any point in the call. The callback reason parameter is accurate (death certificate + dispute). The schedule_callback was premature in timing by roughly 70 turns.",
+            "verdict": "not_met",
+            "reasoning": "The schedule_callback was fired 70 turns before the borrower confirmed the actual time, making the parameter value speculative at the time of the call. More critically, end_call was never triggered at all — the call has no formal close function call."
+          },
+          "O3": {
+            "evidence": "Positive: customer was given the support@demolender.com email address (Turn 118); agent acknowledged dispute and bereavement; callback was scheduled. Negative: document submission channel remains unresolved (customer cannot email, no WhatsApp provided); agent provided fabricated identity (Abhishek/Riverline) and wrong amounts (35,588); agent applied credit pressure inappropriately; customer was never given a clear path forward.",
+            "verdict": "partial",
+            "reasoning": "The borrower leaves with a callback scheduled and a support email address, which are marginal improvements, but the fabricated agent identity, incorrect amounts, unresolved document-submission channel, and inappropriate credit pressure leave her with misinformation and unresolved anxiety — a mixed net outcome."
+          }
+        }
+      },
+      "worst_messages": [
+        {
+          "turn_index": 36,
+          "agent_message": "I am so sorry to hear about your husband's passing, Rahul. That must be incredibly difficult. I understand this situation with the loan is complicated, especially with him having handled it. I want to clarify that even though there's a dispute, at six hundred and sixty-eight days past due, every month adds another negative entry to the credit report. Banks only see an unpaid loan. Resolving the payment does not mean giving up the dispute. You can still pursue it separately. It",
+          "issue": "This turn commits four simultaneous failures: (1) it reverts to English after the customer had been speaking Hindi throughout and despite having received a switch_language(hi) call, (2) it fabricates the DPD as 668 days when the system value is 180, (3) it delivers a scripted credit-score pressure lecture to a bereaved widow seconds after she disclosed her husband's death and during an active dispute — precisely the context where the system prompt mandates pivoting away from collection pressure, (4) it completely ignores the customer's actual request for a document-submission number. The 'empathy' opener ('I am so sorry') is immediately undermined by the NPA lecture that follows.",
+          "category": "wrong_strategy",
+          "should_have_done": "मुझे आपके पति के बारे में यह सुनकर बहुत दुख हुआ। यह बहुत कठिन समय है। आपने बताया कि उन्होंने पूरा भुगतान कर दिया था — हम इसकी जांच ज़रूर करेंगे। इसके लिए मुझे आपसे उनका डेथ सर्टिफिकेट और कोई भी पेमेंट प्रूफ चाहिए होगा। मैं आपको अभी बताता हूँ कि आप यह documents कहाँ भेज सकती हैं। (Then provide the email and ask about WhatsApp fallback — no credit pressure at all.)",
+          "impact": "This turn permanently damaged trust: the customer immediately called out the language switch at Turn 37 and spent the next seven turns complaining about it rather than moving forward. The fabricated DPD of 668 (vs. actual 180) was left uncorrected and was repeated again in Turn 114, so the customer received materially wrong information about her liability throughout the call. The premature credit-pressure lecture in a dispute+bereavement context set a coercive tone that made the customer progressively more defensive and less cooperative, requiring the agent to spend the remainder of the call simply recovering goodwill."
+        },
+        {
+          "turn_index": 15,
+          "agent_message": "नमस्ते मैं अभिषेक बोल रहा हूँ रिवरलाइन से। हम प्रोपेलिड के साथ शिक्षा",
+          "issue": "The agent introduces itself as 'Abhishek from Riverline working with Propelld' — every single identity element is fabricated. The system prompt explicitly defines the agent as Alex from DemoCompany working with DemoLender. This is a direct protocol_violation and fabrication: wrong agent name, wrong company name, wrong lender name. The earlier Turn 13 also used 'Abhishek' but was cut off; Turn 15 is the full, audible identity fabrication.",
+          "category": "fabrication",
+          "should_have_done": "मैं Alex बोल रहा हूँ, DemoCompany से। हम DemoLender के साथ काम करते हैं शिक्षा ऋण के लिए। आपका जो DemoLender का लोन है, उसमें पचास हज़ार रुपये बकाया दिख रहे हैं। क्या आप मुझे बता सकती हैं कि भुगतान में कोई परेशानी है?",
+          "impact": "Because the agent committed to a false identity (Abhishek/Riverline/Propelld), the customer addressed the agent as 'Abhishek' at Turn 37 and the fabricated lender name 'Propelld/Propral' appeared again in Turns 64, 66, 72, 89, and 135. The customer is therefore operating under a completely wrong understanding of who is calling and which institution holds her loan. This undermines any payment verification or document submission she might attempt, since she would contact the wrong entity. It also exposes the lender to regulatory risk for impersonation of a different company."
+        },
+        {
+          "turn_index": 114,
+          "agent_message": "मैं आपको विश्वास दिलाना चाहता हूँ कि मैं आपकी बात प्रॉपरल की टीम तक पहुंचाऊँगा। हम इसकी जांच करेंगे और आपको जल्द से जल्द सूचित करेंगे। इस बीच, मैं एक बार फिर से यह ज़रूर कहना चाहूँगा कि भले ही यह विवादित राशि है, लेकिन छह सौ अड़सठ दिनों से बकाया होने के कारण हर महीने आपकी क्रेडिट रिपोर्ट पर एक नकारात्मक प्रविष्टि जुड़ रही है। हालांकि, मैं इस बात पर ज़ोर नहीं दूँगा और आपकी चिंता को समझता हूँ। आपके पति के पेमेंट डिटेल्स और डेथ सर्टिफिकेट के लिए, मैं आपको एक ईमेल आईडी दे सकता हूँ जहाँ आप ये दस्तावेज़ भेज सकती हैं। क्या आप अभी ईमेल आईडी लेना चाहेंगी?",
+          "issue": "This turn repeats the fabricated DPD of 668 days for a second time, re-applies credit-score pressure on a bereaved widow in active dispute who has explicitly stated she is a housewife with no income ('मैं कोई amount नहीं pay कर पाऊंगी' at Turn 104), and then self-contradictorily says 'मैं इस बात पर ज़ोर नहीं दूँगा' — meaning the agent acknowledges the pressure is inappropriate even while applying it. The agent also promises to 'investigate husband's account payment details', a capability not in the system prompt (fabricated commitment). Finally, it is a 100+ word monologue delivered to a voice-call customer who has already complained about the agent's verbosity.",
+          "category": "wrong_strategy",
+          "should_have_done": "ठीक है। आपने जो बताया है वह मैंने नोट कर लिया है — आपके पति ने loan पूरा चुका दिया था और उनकी March 2025 में मृत्यु हो गई। हम इस dispute को आगे बढ़ाएंगे। आप अपना death certificate support@demolender.com पर भेज सकती हैं। क्या मैं आपके लिए एक callback schedule करूँ ताकि हमारी team आपसे directly बात कर सके?",
+          "impact": "By repeating the fabricated 668-day DPD figure and applying credit pressure a second time after the customer had just explicitly said she cannot pay anything, the agent caused the customer to become more distressed and extended the call by at least 30 turns of defensive, repetitive conversation about her inability to email documents. The self-contradictory phrasing ('I won't emphasize this, but...') eroded any remaining trust. The conversation then looped endlessly on the WhatsApp/email channel question without resolution, ultimately producing a callback whose logistics were never fully confirmed."
+        }
+      ]
+    }
+  ]
+}

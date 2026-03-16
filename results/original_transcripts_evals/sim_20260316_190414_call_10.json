@@ -1,0 +1,91 @@
+{
+  "call_id": "call_10",
+  "timestamp": "20260316_190414",
+  "customer_name": "Ravi Gupta",
+  "disposition": "NO_COMMITMENT",
+  "total_turns": 15,
+  "function_calls": [
+    {
+      "turn": 4,
+      "function": "proceed_to_discovery",
+      "params": ""
+    },
+    {
+      "turn": 6,
+      "function": "proceed_to_discovery",
+      "params": ""
+    },
+    {
+      "turn": 14,
+      "function": "schedule_callback",
+      "params": "preferred_time=\"tomorrow evening\", callback_type=\"wants_payment_amount\", reason=\"Customer lost job, wants to know minimum closure amount. POS unavailable, needs team confirmation.\""
+    },
+    {
+      "turn": 14,
+      "function": "end_call",
+      "params": "reason=\"callback_scheduled\""
+    }
+  ],
+  "conversation": [
+    {
+      "role": "agent",
+      "text": "Hello, this is Alex from DemoCompany, calling about your DemoLender loan. We reviewed your account and have a good offer to help close it. Can we talk for a moment?"
+    },
+    {
+      "role": "customer",
+      "text": "yes"
+    },
+    {
+      "role": "agent",
+      "text": "Am I speaking with Ravi Gupta?"
+    },
+    {
+      "role": "customer",
+      "text": "yes yes"
+    },
+    {
+      "role": "agent",
+      "text": "Great, Ravi. Your account with DemoLender shows fifty thousand rupees pending, and it has been overdue for quite some time. Since the closure figures need to be confirmed with the team, I want to make sure we get you the best possible offer.\n\nCan you tell me a little about your current situation — what has made it difficult to clear this?"
+    },
+    {
+      "role": "customer",
+      "text": "yeah yeah i can see"
+    },
+    {
+      "role": "agent",
+      "text": "Got it, Ravi. So what's been holding you back from clearing this? Is it a cash flow issue right now?"
+    },
+    {
+      "role": "customer",
+      "text": "yes i can share not a problem"
+    },
+    {
+      "role": "agent",
+      "text": "That's helpful, Ravi. Can you tell me a bit more — is this a temporary situation, or has it been going on for a while?"
+    },
+    {
+      "role": "customer",
+      "text": "Yeah it's been tough. I lost my job few months back. But tell me what offer you have? What's the minimum I can pay to close this?"
+    },
+    {
+      "role": "agent",
+      "text": "I understand, losing a job makes this really tough. I want to be straight with you — I need to check with the team to get you the exact closure figure. I don't want to quote you something that isn't confirmed. Can I call you back with the best offer we can put together for your account?"
+    },
+    {
+      "role": "customer",
+      "text": "I'm waiting. okay"
+    },
+    {
+      "role": "agent",
+      "text": "Perfect, I'll get those figures confirmed and call you back shortly. What time works best for you today or tomorrow?"
+    },
+    {
+      "role": "customer",
+      "text": "tomorrow evening"
+    },
+    {
+      "role": "agent",
+      "text": "Got it, tomorrow evening it is. I'll have the best closure offer ready for you then.\n\nThank you, Ravi. We'll speak tomorrow evening. Take care."
+    }
+  ]
+}

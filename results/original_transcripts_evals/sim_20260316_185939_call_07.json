@@ -1,0 +1,133 @@
+{
+  "call_id": "call_07",
+  "timestamp": "20260316_185939",
+  "customer_name": "Meera Joshi",
+  "disposition": "LANGUAGE_BARRIER",
+  "total_turns": 23,
+  "function_calls": [
+    {
+      "turn": 8,
+      "function": "proceed_to_discovery",
+      "params": ""
+    },
+    {
+      "turn": 10,
+      "function": "proceed_to_discovery",
+      "params": ""
+    },
+    {
+      "turn": 14,
+      "function": "switch_language",
+      "params": "language=\"mr\""
+    },
+    {
+      "turn": 20,
+      "function": "switch_language",
+      "params": "language=\"mr\""
+    },
+    {
+      "turn": 22,
+      "function": "schedule_callback",
+      "params": "preferred_time=\"as soon as possible\", callback_type=\"normal\", reason=\"language_barrier\""
+    },
+    {
+      "turn": 22,
+      "function": "end_call",
+      "params": "reason=\"callback_scheduled\""
+    }
+  ],
+  "conversation": [
+    {
+      "role": "agent",
+      "text": "Hello, this is Alex from DemoCompany, calling about your DemoLender loan. We reviewed your account and have a good offer to help close it. Can we talk for a moment?"
+    },
+    {
+      "role": "customer",
+      "text": "hello? who talking who?"
+    },
+    {
+      "role": "agent",
+      "text": "This is Alex from DemoCompany. Am I speaking with Meera Joshi?"
+    },
+    {
+      "role": "customer",
+      "text": "Hello? Hello, sir?"
+    },
+    {
+      "role": "agent",
+      "text": "Yes, hello! Can you hear me? Am I speaking with Meera Joshi?"
+    },
+    {
+      "role": "customer",
+      "text": "Okay, sir. Sir, let's say I'm explained. Let's connect the call as well. Anyone available?"
+    },
+    {
+      "role": "agent",
+      "text": "Yes, I'm here! Is this Meera Joshi?"
+    },
+    {
+      "role": "customer",
+      "text": "yes yes sir"
+    },
+    {
+      "role": "agent",
+      "text": "Meera, your account with DemoLender shows 50000 rupees pending. I need to check with the team on the best closure offer for your account — I want to make sure we get you the right figures.\n\nCan you tell me a little about what's been going on — why the payments have been on hold?"
+    },
+    {
+      "role": "customer",
+      "text": "I'm understanding, sir"
+    },
+    {
+      "role": "agent",
+      "text": "That's good to hear. Can you tell me — are you currently working, or has there been a change in your income recently?"
+    },
+    {
+      "role": "customer",
+      "text": "Okay, sir."
+    },
+    {
+      "role": "agent",
+      "text": "Meera, are you currently employed or do you have any income coming in right now?"
+    },
+    {
+      "role": "customer",
+      "text": "do you know marathi?"
+    },
+    {
+      "role": "agent",
+      "text": "हो, मी मराठीत बोलू शकतो. मीरा, तुम्ही सध्या नोकरी करत आहात का?"
+    },
+    {
+      "role": "customer",
+      "text": "hello?"
+    },
+    {
+      "role": "agent",
+      "text": "हो, मी इथे आहे. तुम्ही ऐकू येत आहे का, मीरा?"
+    },
+    {
+      "role": "customer",
+      "text": "speak slowly mla kalat nahi ahe"
+    },
+    {
+      "role": "agent",
+      "text": "I understand. Meera, I will speak slowly. Can you tell me — do you have a job right now?"
+    },
+    {
+      "role": "customer",
+      "text": "मला काही समजत नाही. मराठी मध्ये बोला."
+    },
+    {
+      "role": "agent",
+      "text": "ठीक आहे, मीरा. मी हळू बोलतो. तुम्ही सध्या कुठे काम करता का?"
+    },
+    {
+      "role": "customer",
+      "text": "अहो मला काहीच समजत नाही तुमचं. दुसरं कोणी मराठी बोलणारं द्या ना."
+    },
+    {
+      "role": "agent",
+      "text": "मीरा, मला माफ करा. मी एक मराठी बोलणारा सहकारी तुम्हाला कॉल करण्याची व्यवस्था करतो.\nलवकरच कोणीतरी तुम्हाला कॉल करेल. धन्यवाद, मीरा. काळजी घ्या."
+    }
+  ]
+}
