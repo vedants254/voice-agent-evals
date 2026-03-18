@@ -40,7 +40,7 @@ Ended up with 7 evaluation dimensions. The weights aren't equal because not ever
 
 Each dimension has 3-5 specific requirements with sub-criteria. So the LLM judge isn't doing vibes. It has to cite transcript evidence for every verdict. "The agent said X at turn 7 which violates requirement P2 because the quoted amount doesn't match customer data." That kind of thing.
 
-The verdict logic is simple on purpose. Score above 50? Good. Below? Bad. With two floor checks so that a catastrophic protocol or situational failure can't be averaged away by decent scores elsewhere. Tried fancier categorical rules at first but honestly the simple threshold worked better once the weights were right.
+The verdict logic is a deterministic graded against a number. With two floor checks so that a catastrophic protocol or situational failure can't be averaged away by decent scores elsewhere. Tried fancier categorical rules at first but honestly the simple threshold worked better once the weights were right. And it made made more sense to grade that way , however we could also go around the threshold when improving agents better .
 
 ## What was found
 
@@ -85,14 +85,12 @@ Two customer modes. Replay just feeds original customer messages back (cheap, fa
 ## Repo structure
 
 ```
-├── system-prompt.md / system-prompt-fixed.md
+├── system-prompt-fixed.md
 ├── llm_clients.py                    # shared LLM client (Anthropic/Gemini/Groq)
 ├── detective/                        # Part 1: evaluator + criteria docs
 ├── surgeon/                          # Part 2: interactive sim + flaw analysis
 ├── pipeline/                         # Part 3: reusable one-command pipeline
 ├── results/                          # all outputs, scores, comparisons
-├── transcripts/                      # the 10 call transcripts
-└── verdicts.json                     # human ground truth (sealed until Part 1 done)
 ```
 
 ## What I'd do with more time
